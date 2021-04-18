@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+        /* a伪类选择器 */
+        /* 顺序  link->visited->hover->active */
+        /* 选择未选中的链接 */
+        #a1:link {
+            color: black;
+            text-decoration: underline;
+        }
+
+        /* 选择已经访问过的链接 */
+        #a2:visited {
+            color: gray;
+        }
+
+        /* 选择鼠标经过的链接 */
+        #a3:hover {
+            color: skyblue;
+            text-decoration: none;
+        }
+
+        /* 选择鼠标正在按下还没谈起的链接 */
+        #a4:active {
+            color: green;
+        }
+
+        /* focus伪类选择器 */
+        input:focus {
+            background-color: chocolate;
+        }
+    </style>
+</head>
+
+<body5>
+    <a href="#" id="a1">未访问的链接</a>
+    <a href="#" id="a2">已经访问过的链接</a>
+    <a href="#" id="a3">经过此链接</a>
+    <a href="#" id="a4">正在按下还没谈起的链接</a>
+
+    <input type="text" name="" id="">
+    <input type="text" name="" id="">
+    <input type="text" name="" id="">
+</body5 </html5

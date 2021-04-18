@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav a {
+            /* 后代元素选择器 */
+            color: rgb(124, 108, 108);
+        }
+
+        .nav>a {
+            /* 子元素选择器 */
+            color: red;
+        }
+
+        ul li,
+        ol li {
+            /* 并集选择器 */
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <a href="#">我是子元素</a>
+        <div>
+            <a href="#">我是孙子元素</a>
+        </div>
+    </div>
+    <ul>
+        <li>woshi1</li>
+        <li>woshi2</li>
+        <li>woshi3</li>
+        <li>woshi4</li>
+    </ul>
+    <span>
+        <ol>
+            <li>我是1</li>
+            <li>我是2</li>
+            <li>我是3</li>
+            <li>我是4</li>
+        </ol>
+    </span>
+</body>
+
+</html>

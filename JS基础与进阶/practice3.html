@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 600px;
+            height: 600px;
+        }
+
+        #div1 {
+            height: 50px;
+            width: 600px;
+        }
+
+        #div2 {
+            height: 300px;
+            width: 600px;
+        }
+
+        #div1 ul {
+            border: 1px solid black;
+            float: left;
+        }
+
+        li {
+            display: inline-block;
+            width: 50px;
+            position: relative;
+            border: 1px solid black;
+            margin: 0px;
+        }
+
+        .item {
+            margin-top: 0px;
+            display: none;
+        }
+
+        .item {
+            display: none;
+        }
+
+        .select {
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <div id="div1">
+            <ul>
+                <li class="select">首页</li>
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+                <li>D</li>
+            </ul>
+        </div></br>
+        <div id="div2">
+            <div class="message">导航内容</div>
+            <div class="item">A内容</div>
+            <div class="item">B内容</div>
+            <div class="item">C内容</div>
+            <div class="item">D内容</div>
+        </div>
+    </div>
+    <script>
+        var div1 = document.querySelector('#div1');
+        var lis = div1.querySelectorAll('li');
+        var div2 = document.querySelector('#div2');
+        var lis2 = div2.querySelectorAll('div');
+
+
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].setAttribute('index', i);
+            lis[i].onclick = function () {
+                for (var i = 0; i < lis.length; i++) {
+                    lis[i].className = '';
+                }
+                this.className = 'select';
+
+                var index = this.getAttribute('index');
+
+                for (var i = 0; i < lis2.length; i++) {
+                    lis2[i].style.display = 'none';
+                }
+
+                lis2[index].style.display = 'block';
+            }
+        }
+    </script>
+    <script>
+        // var div = document.querySelector('div');
+
+        // //获得内置属性值 element.属性名
+        // console.log(div.id);
+
+        // //获得自定义属性值 element.getAttribute('属性名')
+        // console.log(div.getAttribute('index'));
+
+        // //设置属性值 element.属性名=''
+        // div.id = '1';
+        // console.log(div.id);
+        // //设置属性值 element.setAttribute('属性名','值');  主要设置自定义属性
+        // div.setAttribute('index', 1);
+        // console.log(div.getAttribute('index'));
+
+        // //移除属性值  removeAttribute('属性名')
+        // div.removeAttribute('index');
+
+        var div = document.querySelector('.message');
+        console.log(div);
+
+        //获取离元素最近的父节点元素
+        console.log(div.parentNode);
+
+        var div1 = document.querySelector('#div1');
+        var div2 = document.querySelector('#div2');
+
+        //获取该元素的所有子节点  包括文本节点
+        console.log(div2.childNodes);
+
+        //children获取所有子元素节点
+        console.log(div2.children);
+
+        //firstchild获得第一个子节点 包括文本节点
+        console.log(div2.firstChild);
+        console.log(div2.lastChild);
+
+        //firstElementchild获得第一个子元素节点  ie9以上支持
+        console.log(div2.firstElementChild);
+        console.log(div2.lastElementChild);
+
+        //实际开发写法
+        console.log(div2.children[0]);
+        console.log(div2.children[div2.children.length - 1]);
+
+        //nextSibling 得到下一个兄弟节点  previousElementSibling 得到上一个兄弟节点
+        console.log(div1.nextSibling);
+        console.log(div2.previousSibling);
+
+        //nextElementSibling得到下一个兄弟元素节点 previousElementSibling得到上一个兄弟元素节点  ie9以上才支持
+        console.log(div1.nextElementSibling);
+        console.log(div2.previousElementSibling);
+
+        //封装一个函数来解决兼容性问题
+        function getNextElementSibling(element) {
+            var ele = element;
+            while (ele = ele.nextSibling) {
+                if (ele.nodeType == 1) {
+                    return ele;
+                }
+            }
+            return null;
+        }
+
+        console.log(getNextElementSibling(div1));
+
+        //创建一个元素节点 createElement
+        var li = document.createElement('li')
+
+        //添加节点 node.appendChild(child) node父级 child 子集 类似于数组中的push
+        div1.appendChild(li);
+
+        //添加节点到指定元素前面  node.InsertBefore
+        div1.insertBefore(li, div1.children[0]);
+
+        //删除节点   node.removeChild(child)  
+        div1.removeChild(div1.children[0]);
+    </script>
+</body>
+
+</html>

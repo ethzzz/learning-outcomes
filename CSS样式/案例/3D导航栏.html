@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo {
+            width: 1000px;
+            height: 50px;
+            margin: 100px auto;
+        }
+
+        ul li {
+            display: inline-block;
+            margin: 5px;
+            padding: 5px;
+            height: 40px;
+            width: 100px;
+            line-height: 40px;
+            list-style-type: none;
+            transition: all .3s;
+        }
+
+        .box {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            /* 保留3d效果 */
+            transform-style: preserve-3d;
+            transition: all .5s;
+        }
+
+        .box:hover {
+            transform: rotateX(90deg);
+        }
+
+        .top,
+        .footer {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .box .top {
+            background-color: orange;
+            transition: all .5s;
+            transform: translateZ(20px);
+        }
+
+        .box .footer {
+            background-color: gray;
+            transform: translateY(20px) rotateX(-90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="demo">
+        <ul>
+            <li>
+                <div class="box">
+                    <div class="top">
+                        我是头部内容
+                    </div>
+                    <div class="footer">
+                        我是底部内容
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="box">
+                    <div class="top">
+                        我是头部内容
+                    </div>
+                    <div class="footer">
+                        我是底部内容
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="box">
+                    <div class="top">
+                        我是头部内容
+                    </div>
+                    <div class="footer">
+                        我是底部内容
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="box">
+                    <div class="top">
+                        我是头部内容
+                    </div>
+                    <div class="footer">
+                        我是底部内容
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="box">
+                    <div class="top">
+                        我是头部内容
+                    </div>
+                    <div class="footer">
+                        我是底部内容
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="box">
+                    <div class="top">
+                        我是头部内容
+                    </div>
+                    <div class="footer">
+                        我是底部内容
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

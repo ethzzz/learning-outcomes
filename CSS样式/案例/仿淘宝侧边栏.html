@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 1000px;
+            margin: 0 auto;
+            margin-bottom: 10px;
+        }
+
+        .header {
+            height: 200px;
+            background-color: hotpink;
+        }
+
+        .banner {
+            height: 400px;
+            background-color: blue;
+        }
+
+        .main {
+            height: 1000px;
+            background-color: brown;
+        }
+
+        .nav {
+            position: absolute;
+            height: 100px;
+            width: 40px;
+            background-color: red;
+            top: 300px;
+            right: 217px;
+        }
+
+        .goback {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <span class="goback">回到顶部</span>
+    </div>
+    <div class="header">header</div>
+    <div class="banner">banner</div>
+    <div class="main">main</div>
+    <script>
+        // 获取侧边栏元素
+        var nav = document.querySelector('.nav');
+        var banner = document.querySelector('.banner');
+        // 获取banner元素距离父元素顶端即body最上方的距离
+        var bannerTop = banner.offsetTop;
+        // 获取nav固定定位后距离窗口上边缘的距离
+        var navTop = nav.offsetTop - bannerTop;
+        // 获得 回到顶端  span元素
+        var goback = document.querySelector('.goback');
+        // 获得main 元素
+        var main = document.querySelector('.main')
+        // 添加window滚动事件
+        document.addEventListener('scroll', function () {
+            // 打印输出滚动事件 页面滚动的距离
+            // console.log(window.pageYOffset);
+            // 改变nav随着窗口滚动发生定位改变
+            if (window.pageYOffset >= bannerTop) {
+                nav.style.position = 'fixed';
+                nav.style.top = navTop + 'px';
+            } else {
+                nav.style.position = 'absolute';
+                nav.style.top = 300 + 'px';
+            }
+            // 当页面滚动到main元素时，nav显示回到顶部元素
+            if (window.pageYOffset >= main.offsetTop) {
+                goback.style.display = 'block';
+            } else {
+                goback.style.display = 'none';
+            }
+        })
+
+        // 点击返回顶部  动画形式返回浏览器顶部
+        goback.addEventListener('click', function () {
+            // 里面的xy不跟单位 直接写数字即可
+            // window.scroll(x,y)
+            // 因为是窗口滚动 欧事宜对象是window
+            animate(window, 0);
+        })
+
+        function animate(obj, target, callback) {
+            clearInterval(obj.timer);
+            obj.timer = setInterval(() => {
+                // 设置每次移动的距离 = (目标距离-当前距离)/10 
+                var step = (target - window.pageYOffset) / 10;
+                // console.log(step);
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                if (window.pageYOffset == target) {
+                    clearInterval(obj.timer);
+                    // 回调函数
+                    /* if (callback) {
+                        callback();
+                    } */
+                    // 与运算 两者为true 才会执行
+                    callback && callback();
+                } else {
+                    // 变速动画
+                    // obj.style.left = window.pageYOffset + step + 'px';
+                    window.scroll(0, window.pageYOffset + step);
+                }
+            }, 20);
+        }
+    </script>
+</body>
+
+</html>

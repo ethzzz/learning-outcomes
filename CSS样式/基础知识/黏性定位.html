@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 黏性定位 */
+        /* 被认为是相对定位和固定定位的混合体 */
+        /* 以浏览器的可视窗口为参照点移动元素(固定定位特点) */
+        /* 占有原来的位置(相对定位特点) */
+        /* 必须添加top、left、right、bottom其中一个才有效 */
+        /* 跟页面滚动搭配使用。兼容性较差。IE不支持 */
+        .nav {
+            position: sticky;
+            top: 0;
+            width: 800px;
+            height: 50px;
+            margin: 100px auto;
+            background-color: skyblue;
+        }
+
+        body {
+            height: 1500px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">我是导航栏</div>
+</body>
+
+</html>

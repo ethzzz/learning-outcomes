@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li {
+            width: 300px;
+            height: 20px;
+            margin: 15px 0;
+            background-color: chocolate;
+        }
+
+        ul li a {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='div1'>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <button id='btn1'>发布</button>
+        <button id='btn2'>删除</button>
+        <ul></ul>
+    </div>
+    <script>
+        var div1 = document.querySelector('#div1');
+        var text = div1.querySelector('textarea');
+        var btn1 = div1.querySelector('#btn1');
+        var btn2 = div1.querySelector('#btn2');
+        var ul = div1.querySelector('ul');
+        btn1.onclick = function () {
+            var li = document.createElement('li');
+            console.log(text.value);
+            if (text.value == '') {
+                alert('您没有输入任何内容!')
+                return null;
+            } else {
+                ul.insertBefore(li, ul.children[0]);
+                li.innerHTML = text.value + "<a href='javascript:src(0)'>删除</a>";
+                btn2.removeAttribute('disabled');
+                var a = ul.querySelectorAll('a');
+                for (var i = 0; i < a.length; i++) {
+                    a[i].onclick = function () {
+                        ul.removeChild(this.parentNode);
+                    }
+                }
+            }
+        }
+        btn2.onclick = function () {
+            if (ul.children.length === 0) {
+                this.disabled = 'true';
+            } else {
+                ul.removeChild(ul.children[0]);
+            }
+        }
+    </script>
+</body>
+
+</html>

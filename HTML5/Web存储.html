@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // HTML5 提供了 localStorage 和 sessionStorage 两种客户端存储数据的新方法
+        // 1. localStorage 方法
+        // 没有时间限制  第二天  第三天 以至于以后都可以使用
+        localStorage.lastname = "Smith";
+        document.write("localStorage数据:" + localStorage.lastname + '<br>');
+        // 对用户访问页面的次数进行计数
+        if (localStorage.pagecount) {
+            localStorage.pagecount = Number(localStorage.pagecount) + 1;
+        } else {
+            localStorage.pagecount = 1;
+        }
+        document.write("页面访问次数: " + localStorage.pagecount + " 次." + "<br/>");
+
+        // 2.sessionStorage 方法
+        // 用户关闭浏览器后数据会被删除
+        sessionStorage.lastname = "Smith";
+        document.write("sessionStorage数据:" + sessionStorage.lastname + "<br/>");
+        // 对用户在当前session中访问页面的次数
+        if (sessionStorage.pagecount) {
+            sessionStorage.pagecount = Number(sessionStorage.pagecount) + 1;
+        } else {
+            sessionStorage.pagecount = 1;
+        }
+        document.write("session数据访问次数: " + sessionStorage.pagecount + " 次 .");
+    </script>
+</body>
+
+</html>

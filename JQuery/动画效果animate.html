@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: brown;
+        }
+    </style>
+    <script src="jquery-3.5.1.js"></script>
+</head>
+
+<body>
+    <button class="btn1">开始动画效果</button>
+    <button class="btn2">停止动画效果</button>
+    <div></div>
+    <script>
+        var div = $("div");
+        $('button.btn1').click(function () {
+            div.animate({
+                height: '400px'
+            });
+            div.animate({
+                width: '400px'
+            });
+            div.animate({
+                height: '200px'
+            });
+            div.animate({
+                width: '200px'
+            });
+        })
+        $('button.btn2').click(function () {
+            /* $(selector).stop(stopAll,gotoEnd);
+            stopAll 规定是否应该清楚动画队列 默认为false  即仅停止活动的动画，允许任何排入队列的动画向后执行
+            gotoEnd 规定是否立即完成当前动画，默认是false */
+            div.stop(true, false);
+        })
+    </script>
+</body>
+
+</html>

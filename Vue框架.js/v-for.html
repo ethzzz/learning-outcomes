@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input v-model="message">
+        <button @click='add'>添加元素</button>
+        <button @click='remove'>删除元素</button>
+        <ul>
+            <!-- v-for   index为数组索引 -->
+            <li v-for="(item,index) in arr">
+                {{index+1}} {{item}}
+            </li>
+            <br><br>
+            <li>
+                type name age weight
+            </li>
+            <li v-for="item in animal">
+                {{item.type}}
+                {{item.name}}
+                {{item.age}}
+                {{item.weight}}
+            </li>
+        </ul>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                message: '',
+                arr: ["HTML5", "CSS3", "JavaScript", "php", "python"],
+                animal: [{
+                        type: 'tiger',
+                        name: '追风虎',
+                        age: 6,
+                        weight: '100kg'
+                    },
+                    {
+                        type: 'lion',
+                        name: '辛巴',
+                        age: 5,
+                        weight: '100kg'
+                    },
+                    {
+                        type: 'monkey',
+                        name: '大猩猩',
+                        age: 6,
+                        weight: '100kg'
+                    },
+                    {
+                        type: 'elephant',
+                        name: '大象',
+                        age: 6,
+                        weight: '500kg'
+                    },
+                    {
+                        type: 'cat',
+                        name: '猫',
+                        age: 6,
+                        weight: '20kg'
+                    },
+                ],
+                message: ''
+            },
+            methods: {
+                add: function () {
+                    this.arr.push('message');
+                },
+                remove: function () {
+                    this.arr.shift();
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            width: 1000px;
+            margin: 0 auto;
+        }
+
+        div a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            text-decoration: none;
+            border: 1px solid gray;
+        }
+
+        .nav .prev,
+        .nav .next {
+            width: 80px;
+        }
+
+        .nav .current {
+            border: none;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <a href="" class="prev">&lt;&lt;上一页</a>
+        <a href="" class="current">1</a>
+        <a href="">2</a>
+        <a href="">3</a>
+        <a href="">4</a>
+        <a href="">4</a>
+        <a href="">...</a>
+        <a href="">10</a>
+        <a href="" class="next">&gt;&gt;下一页</a>
+        请选择页数<input type="text" name="" id="">
+        <button type="button">跳转</button>
+    </div>
+</body>
+
+</html>

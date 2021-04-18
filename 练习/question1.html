@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        (function demo() {
+
+            var a = [];
+            for (let i = 0; i < 10; i++) {
+                a[i] = Math.ceil(Math.random() * 20 - 10)
+            }
+            var start = 0;
+            var end = a.length - 1;
+            for (let i = start; i <= end; i++) {
+                i = start;
+                if (a[i] > 0) {
+                    start++;
+                } else {
+                    let temp = a[i];
+                    a[i] = a[end];
+                    a[end] = temp;
+                }
+                if (a[end] < 0) {
+                    end--;
+                }
+            }
+            console.log(a);
+        })();
+    </script>
+</body>
+
+</html>

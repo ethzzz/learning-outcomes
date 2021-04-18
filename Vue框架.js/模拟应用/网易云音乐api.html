@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <audio :src="musicUrl"></audio>
+        <input type="text" name="" id="" v-model="query" @keyup.enter="searchMusic">
+        <button type="button" @click="searchMusic">获取音乐</button>
+        <ul>
+            <li v-for="item in musicList">
+                <span>{{item.name}}</span>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        //创建Vue实例,得到 ViewModel
+        var app = new Vue({
+            el: '#app',
+            data: {
+                query: "",
+                musicList: [],
+                musicUrl: ""
+            },
+            methods: {
+                searchMusic: function () {
+                    var that = this;
+                    axios.get("https://autumnfish.cn/search?keywords=" + this.query)
+                        .then(function (response) {
+                            console.log(response);
+                            that.musicList = response.data.result.songs;
+                        }, function (err) {})
+
+                },
+                getMusic: function () {
+                    axios.get("http://musicapi.leanapp.cn/?keywords=" + this.musicId)
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

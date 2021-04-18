@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 添加绝对定位和固定定位的元素与浮动类似 */
+        /* 行内元素可以直接设置高宽 */
+        /* 块级元素如果不给高宽，默认大小是内容的大小 */
+        /* 不会触发外边距合并塌陷问题  与浮动一样 */
+
+        /* 浮动元素会压住下面标准流的盒子，但是不会压住下面标准流盒子的文字或图片 */
+        /* 绝对定位(固定定位)会完全压住盒子 */
+        /* 浮动最初的目的是做文字环绕效果 文字会环绕浮动元素 */
+        span {
+            float: left;
+            /* position: absolute; */
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+        }
+
+        div {
+            /* position: absolute; */
+            width: 100%;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <span></span>
+    <div>去ID后按活动氨甲环酸大佛安徽发哦i</div>
+</body>
+
+</html>

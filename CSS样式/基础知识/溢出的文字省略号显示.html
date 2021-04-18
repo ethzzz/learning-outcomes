@@ -1,0 +1,56 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .div1 {
+                width: 150px;
+                height: 80px;
+                font-size: 16px;
+                background-color: skyblue;
+                margin-bottom: 10px;
+                /* 单行文本溢出省略号表示 */
+                /* 1.强制单行显示文本 */
+                white-space: nowrap;
+                /* 2. 溢出部分隐藏*/
+                overflow: hidden;
+                /* 3. 文字溢出的时候用省略号表示 */
+                text-overflow: ellipsis;
+            }
+
+            .div2 {
+                width: 150px;
+                height: 40px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                background-color: gray;
+                /* 多行文本溢出省略号表示 */
+                /* 弹性伸缩盒子模型显示 */
+                display: -webkit-box;
+                /* 限制在一个块元素显示的文本的行数 */
+                -webkit-line-clamp: 2;
+                /* 设置或检索伸缩盒对象的子元素的排列方式 */
+                -webkit-box-orient: vertical;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="div1">
+            明月几时有，把酒问青天。
+            不知天上宫阙，今夕是何年。
+            我欲乘风归去，又恐琼楼玉宇。
+            高度不胜寒，起舞弄清影，何似在人间
+        </div>
+        <div class="div2">
+            明月几时有，把酒问青天。
+            不知天上宫阙，今夕是何年。
+            我欲乘风归去，又恐琼楼玉宇。
+            高度不胜寒，起舞弄清影，何似在人间
+        </div>
+    </body>
+
+    </html>

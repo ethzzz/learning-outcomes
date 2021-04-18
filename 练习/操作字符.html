@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var a = 'qwbewrbbeqqbbbweebbbbqee';
+        // console.log(a.match(/b+/g));
+        // console.log(a.match(/b*/g));
+        // console.log(a.match(/b{1,4}/g));
+        // console.log(a.match(/b{1,5}/g));
+
+        // var obj = {}
+        // obj.log = console.log
+        // obj.log.call(console, this);
+
+        // let变量在声明之前都不可以使用  var变量声明后回音石赋值undefined
+        // let x = 10;
+        // let foo = () => {
+        //     console.log(x);
+        //     let x = 20;
+        //     x++;
+        // }
+        // foo();
+
+        // console.log(1);
+        // let a = setTimeout(() => {
+        //     console.log(2)
+        // }, 0);
+        // console.log(3);
+        // Promise.resolve(4).then(b => {
+        //     console.log(b);
+        //     clearTimeout(a);
+        // });
+        // console.log(5);
+
+        // var foo = "10" + 3 - "1";
+        // console.log(typeof (foo));
+        // console.log(foo);
+
+        // var foo1 = () => {
+        //     'use strict'
+        //     console.log(this.location);
+        // }
+        // foo1();
+
+        // function foo2() {
+        //     'use strict'
+        //     console.log(this.location);
+        // }
+        // foo2();
+
+
+        // function A() {
+        //     this.do = function () {
+        //         return 'foo'
+        //     }
+        // }
+        // A.prototype = function () {
+        //     this.do = function () {
+        //         return 'bar'
+        //     }
+        // }
+        // var x = new A().do();
+        // console.log(x);
+
+
+
+        var test = 1;
+        console.log(typeof test == 'number')
+        var test = 1.2;
+        console.log(typeof test == 'float');
+        var test = undefined;
+        console.log(typeof test == 'undefined')
+        var test = {};
+        console.log(typeof test == 'object');
+        var test = null;
+        console.log(typeof test == 'object')
+
+        console.log([1, 2, 3].splice(1, 1, 1))
+        // 虽然是[2]==[2],但是两个数组的地址不同，所以返回false
+        console.log([1, 2, 3].splice(1, 1, 1) == [2]);
+    </script>
+</body>
+
+</html>

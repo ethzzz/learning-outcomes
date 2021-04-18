@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            /* padding 会影响盒子实际大小 */
+            /* padding:5px 一个值代表上下左右都有5像素内边距 */
+            padding: 5px;
+            /* padding:5px 10px;两个值 代表上下5个像素  左右10个像素 */
+            padding: 5px 10px;
+            /* padding: 5px 10px 20px; 三个值 代表上内边距5像素 左右内边距10像素 下内边距20像素 */
+            padding: 5px 10px 20px;
+            /* padding: 5px 10px 20px 30px; 四个值 按上右下做的顺序依次设置内边距 */
+            padding: 5px 10px 20px 30px;
+
+            /* 没有设置width/height属性，则此时padding不会撑开盒子大小 */
+        }
+
+        .demo {
+            margin-top: 20px;
+            width: 300px;
+            height: 200px;
+            padding: 0;
+        }
+
+        .demo p {
+            /* width: 300px; */
+            padding: 10px;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div>我是div1</div>
+    <div class="demo">
+        <p></p>
+    </div>
+</body>
+
+</html>

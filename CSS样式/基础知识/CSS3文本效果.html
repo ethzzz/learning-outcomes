@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .p1 {
+            width: 100px;
+            height: 285px;
+            border: 1px solid;
+            /* 规定文本的轮廓 */
+            outline: solid;
+            /* 向文字添加阴影 */
+            text-shadow: 3px 3px 3px gray;
+            /* 规定文本的换行规则 */
+            word-wrap: break-word;
+            /* 规定当文本溢出包含元素时发生的事情 */
+            overflow: hidden;
+            /* 允许对长的不可分割的单词进行分割并换行到下一行 */
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+
+<body>
+    <p class="p1">This paragraph contains a very long word:
+        thisisaveryveryveryveryveryverylongword the long word will break and wrap to the next line pppppppppppppppp</p>
+</body>
+
+</html>

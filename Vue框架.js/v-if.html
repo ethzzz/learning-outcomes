@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="change">切换显示</button>
+        <!-- v-if适用于不频繁切换的元素  操作元素的显示状态 本质操作DOM元素 直接移除-->
+        <p v-if="isShow">黑马程序员</p>
+        <!-- v-show使用于频繁切换的元素  本质操作display属性-->
+        <p v-show="isShow">v-show修饰黑马程序员</p>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                isShow: false,
+            },
+            methods: {
+                change: function () {
+                    this.isShow = !this.isShow;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

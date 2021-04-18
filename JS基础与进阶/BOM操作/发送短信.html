@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .demo {
+            position: relative;
+            height: 40px;
+            margin: 100px auto;
+        }
+
+        .demo input {
+            position: absolute;
+            height: 20px;
+        }
+
+        button {
+            position: absolute;
+            height: 22px;
+            line-height: 22px;
+            left: 170px;
+            padding: 0 5px;
+        }
+
+        .message {
+            display: none;
+            position: absolute;
+            height: 22px;
+            left: 240px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="demo">
+        <input type="text" name="" id=""><button>发送</button>
+
+        <div class="message">
+            <p><span class="seconds"></span>秒后才能继续发送</p>
+        </div>
+    </div>
+    <script>
+        var btn = document.querySelector('button');
+        var message = document.querySelector('.message');
+        var num = document.querySelector('.seconds');
+        var time = 10;
+        var timer = null;
+        var djs = function () {
+            if (time == 0) {
+                clearInterval(timer);
+                message.style.display = 'none';
+                btn.disabled = false;
+                time = 10;
+            } else {
+                num.innerHTML = time;
+                time--;
+            }
+        }
+        btn.addEventListener('click', function () {
+            message.style.display = 'block';
+            btn.disabled = 'disabled';
+            djs();
+            timer = setInterval(djs, 1000);
+        })
+    </script>
+</body>
+
+</html>

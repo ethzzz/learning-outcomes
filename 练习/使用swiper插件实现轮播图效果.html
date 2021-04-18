@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="/swiper-5.4.5/package/css/swiper.min.css">
+    <!-- Swiper JS -->
+    <script src="/swiper-5.4.5/package/js/swiper.min.js"></script>
+    <style>
+        .box {
+            height: 300px;
+            width: 700px;
+            margin: 200px auto;
+        }
+
+        .swiper-container {
+            width: 600px;
+            height: 200px;
+            padding: 50px;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image:url(/swiper-5.4.5/demos/images/nature-1.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(/swiper-5.4.5/demos/images/nature-2.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(/swiper-5.4.5/demos/images/nature-3.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(/swiper-5.4.5/demos/images/nature-4.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(/swiper-5.4.5/demos/images/nature-5.jpg)"></div>
+            <div class="swiper-slide" style="background-image:url(/swiper-5.4.5/demos/images/nature-6.jpg)"></div>
+        </div>
+
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- Add Arrows -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+
+
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            effect: 'flip',
+            grabCursor: true,
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev'
+        });
+    </script>
+</body>
+
+</html>

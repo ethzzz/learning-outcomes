@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>传统方式</button>
+    <button>事件监听方式</button>
+    <script>
+        var btns = document.querySelectorAll('button');
+
+        //传统方式添加事件
+        btns[0].onclick = function () {
+            alert('hi');
+        }
+        btns[0].onclick = function () {
+            alert('ha');
+        }
+
+        //事件监听方式
+        btns[1].addEventListener('click', function () {
+            alert('hi');
+        })
+        btns[1].addEventListener('click', function () {
+            alert('ha');
+        })
+        btns[1].addEventListener('mouseout', function () {
+            alert('ha');
+        })
+    </script>
+</body>
+
+</html>

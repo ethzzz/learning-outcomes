@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- v-on指令  可以缩写为 @ -->
+        <button v-on:click='click'>v-on指令点击</button>
+        <button @click='click'>@缩写点击</button>
+        <button @dblclick='click'>双击按钮</button>
+        <h2 @click='changefood'>{{ food }}</h2>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                food: "西红柿炒蛋"
+            },
+            methods: {
+                click: function () {
+                    alert("你点击了此按钮");
+                },
+                changefood: function () {
+                    this.food = "番茄炒西红柿";
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

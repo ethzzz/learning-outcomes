@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 210px;
+            margin: 200px auto;
+        }
+
+        span {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            margin-right: 5px;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span class="days">1</span>
+        <span class="hours">1</span>
+        <span class="minutes">2</span>
+        <span class="seconds">3</span>
+    </div>
+    <script>
+        var days = document.querySelector('.days')
+        var hours = document.querySelector('.hours');
+        var minutes = document.querySelector('.minutes');
+        var seconds = document.querySelector('.seconds');
+        var time = +new Date('2020-6-30 16:30:00');
+        getTime();
+
+        function getTime() {
+            var nowtime = +new Date();
+            var lasttime = (time - nowtime) / 1000;
+            var d = parseInt(lasttime / 60 / 60 / 24);
+            d = d < 10 ? '0' + d : d;
+            days.innerHTML = d;
+            var h = parseInt(lasttime / 60 / 60 % 24);
+            h = h < 10 ? '0' + h : h;
+            hours.innerHTML = h;
+            var m = parseInt(lasttime / 60 % 60);
+            m = m < 10 ? '0' + m : m;
+            minutes.innerHTML = m;
+            var s = parseInt(lasttime % 60);
+            s = s < 10 ? '0' + s : s;
+            seconds.innerHTML = s;
+            return d + '天' + h + '时' + m + '分' + s + '秒';
+        }
+
+        var djs = setInterval(getTime, 1000);
+    </script>
+</body>
+
+</html>

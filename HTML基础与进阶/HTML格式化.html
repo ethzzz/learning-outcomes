@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        <b>我是bold</b>
+    </p>
+    <p>
+        <strong>我是strong</strong>
+    </p>
+    <pre>
+这里保留了
+换行和    空格
+适合显示代码
+var i = 0;
+i++;
+console.log(i);
+    </pre>
+
+    <!-- kbd samp code 元素全部支持固定的字母尺寸和间距 -->
+    <!-- code元素不保留多余的空格和折行 -->
+    <code>Computer code</code>
+    <br />
+    <code>
+        var person = {
+        firstName:"Bill",
+        lastName:"Gates",
+        age:50,
+        eyeColor:"blue"
+        }
+    </code><br />
+    <kbd>Keyboard input</kbd>
+    <br />
+    <tt>Teletype text</tt>
+    <br />
+    <samp>Sample text</samp>
+    <br />
+    <var>Computer variable</var>
+    <br />
+
+    <p>
+        <b>注释：</b>这些标签常用于显示计算机/编程代码。
+    </p>
+
+    <!-- 写地址 -->
+    <a href="http://www.baidu.com" target="_blank">Baidu</a><br />
+
+    <!-- title属性 -->
+    <p><abbr title="Hyper Text Markup Language">HTML</abbr>是超文本标记语言</p>
+    <p title="Cascading Style Sheets">CSS</p>
+
+    <!-- 文字方向 -->
+    <p>
+        如果您的浏览器支持 bi-directional override (bdo)，下一行会从右向左输出 (rtl)；
+    </p>
+
+    <bdo dir="rtl">
+        Here is some Hebrew text
+    </bdo></br></br>
+
+    <!-- 块引用 -->
+    这是长的引用：
+    <blockquote>
+        这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。这是长的引用。
+    </blockquote>
+
+    这是短的引用：
+    <q>
+        这是短的引用。
+    </q>
+
+    <p>
+        使用 blockquote 元素的话，浏览器会插入换行和外边距，而 q 元素不会有任何特殊的呈现。
+    </p>
+
+    <!-- 删除字效果和插入字效果 -->
+    <p>一打有 <del>二十</del> <ins>十二</ins> 件。</p>
+
+    <p>大多数浏览器会改写为删除文本和下划线文本。</p>
+
+    <p>一些老式的浏览器会把删除文本和下划线文本显示为普通文本。</p>
+
+    <!-- dfn元素定义项目或缩写的定义 -->
+    <p><dfn title="World Health Organization">WHO</dfn> 成立于 1948 年。</p>
+
+    <!-- address元素内字体通常以斜体显示 大多数浏览器会在元素前后添加折行 -->
+    <address>
+        Written by Donald Duck.<br>
+        Visit us at:<br>
+        Example.com<br>
+        Box 564, Disneyland<br>
+        USA
+    </address>
+
+    <!-- cite元素定义著作的标题  通常以斜体显示 -->
+    <p><cite>The Scream</cite> by Edward Munch. Painted in 1893.</p>
+
+    <!-- var元素定义数学变量 -->
+    <p>爱因斯坦的公式：</p>
+
+    <p><var>E</var> = <var>m</var> <var>c</var><sup>2</sup></p>
+</body>
+
+</html>

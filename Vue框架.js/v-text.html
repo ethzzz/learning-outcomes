@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p v-text="message"></p>
+        <p v-text="info+' !'"></p>
+        <p>我要当{{message+'!'}}</p>
+    </div>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                message: "黑马程序员！！！",
+                info: "前端与移动教研部"
+            }
+        })
+    </script>
+</body>
+
+</html>

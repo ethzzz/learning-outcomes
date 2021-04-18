@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* css属性较后面的会覆盖较前面的 */
+        #float {
+            float: left;
+            background-color: green;
+            background-color: hotpink;
+            font-size: 22px;
+            margin: 10px;
+            position: relative;
+            border: 1px solid black;
+            color: blue;
+        }
+
+        #nofloat {
+            background-color: grey;
+        }
+
+        .son {
+            float: inherit;
+            margin: inherit;
+            position: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nofloat">非浮动元素
+    </div>
+    <div id="float">浮动元素
+        <div class="son">儿子元素</div>
+    </div>
+    <ins>ssss</ins>
+    <button>点击</button>
+    <script>
+        var btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            window.open("https://www.baidu.com", "百度");
+        });
+        console.log(navigator.appName);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 浮动元素会在一行内显示，如果不足以显示，则会另起一行继续显示
+        浮动元素具有行内块元素特性
+        如果块级盒子没有设置宽度，默认宽度与父级一样宽，但是添加浮动后，它的大小根据内容来决定
+        浮动的盒子中间是没有缝隙的，是紧挨着一起的
+        行内元素同理 */
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: gray;
+            float: left;
+        }
+
+        .div2 {
+            background-color: green;
+        }
+
+        .div4 {
+            background-color: hotpink;
+        }
+
+        p {
+            height: 400px;
+            background-color: indigo;
+            float: left;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1">1</div>
+    <div class="div2">2</div>
+    <div class="div3">3</div>
+    <div class="div4">4</div>
+    <p>ppppppppppp</p>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            position: absolute;
+
+        }
+    </style>
+</head>
+
+<body>
+    <img src="../../image/touxiang.jpg" alt="鼠标图片">
+    <script>
+        var image = document.querySelector('img');
+        document.addEventListener('mousemove', function (e) {
+            var x = e.pageX;
+            var y = e.pageY;
+            image.style.top = y - 36 + 'px';
+            image.style.left = x - 36 + 'px';
+
+        })
+    </script>
+</body>
+
+</html>

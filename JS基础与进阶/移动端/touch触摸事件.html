@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100px;
+            width: 100px;
+            background-color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <script>
+        var div = document.querySelector('div');
+        // 获得初始坐标
+        var startX = 0;
+        var startY = 0;
+        // 获得盒子初始位置
+        var X = 0;
+        var Y = 0;
+        // 添加触摸事件
+        div.addEventListener('touchstart', function (e) {
+            // console.log('你触点了此元素');
+            console.log(e);
+            // touches 正在触摸屏幕所有手指的列表
+            // targetTouches 正在触摸当前DOM元素的手指的列表
+            // 如果侦听的是一个DOM元素，他们两个是一样的
+            // changedTouches 手指状态放生了改变你的列表 从无到有 或者从有刀舞
+            // console.log(e.targetTouches[0]);
+
+            // 获得初始坐标并赋值
+            startX = e.targetTouches[0].pageX;
+            startY = e.targetTouches[0].pageY;
+            X = this.offsetLeft;
+            Y = this.offsetTop;
+        })
+        div.addEventListener('touchmove', function (e) {
+            // console.log('你摁住此元素没松开手');
+
+            // 获得移动距离并赋值
+            var moveX = e.targetTouches[0].pageX - startX;
+            var moveY = e.targetTouches[0].pageY - startY;
+            this.style.left = X + moveX + 'px';
+            this.style.top = Y + moveY + 'px';
+        })
+        div.addEventListener('touchend', function (e) {
+            // console.log('你松开触摸此元素');
+            console.log(e);
+            // 手指离开了屏幕的时候 Touches 和 targetTouches 变为无 changedTouches变为有
+        })
+    </script>
+</body>
+
+</html>

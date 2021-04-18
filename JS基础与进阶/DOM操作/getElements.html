@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="div1">2020-6-7</div>
+    <script>
+        var time = document.getElementById('div1');
+        console.log(time);
+        console.log(typeof time); //返回的是一个element对象
+        console.dir(time); //打印返回的元素对象，更好的查看里面的属性和方法;
+    </script>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+    <ol id="ol">
+        <li>a</li>
+        <li>b</li>
+        <li>c</li>
+        <li>d</li>
+        <li>e</li>
+        <li>f</li>
+    </ol>
+    <script>
+        // 返回的是获取过来的元素对象的集合，以伪数组的方式存储
+        var lis = document.getElementsByTagName('li');
+        console.log(lis);
+
+        //elemnt.getElmentsByTagName('标签名')来获取指定指定的单个元素中的所有标签
+        var ol = document.getElementById('ol');
+        console.log(ol.getElementsByTagName('li'));
+    </script>
+
+</body>
+
+</html>

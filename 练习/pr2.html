@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* var obj = {
+            a: 1,
+            b: function () {
+                console.log(this.a);
+            }
+        }
+        obj.b();
+        var fun = obj.b;
+        fun(); */
+
+        /* var A = {
+            n: 4399
+        }
+        var B = function () {
+            this.n = 9999
+        }
+        var C = function () {
+            var n = 8888
+        }
+        B.prototype = A;
+        C.prototype = A;
+        var b = new B();
+        var c = new C();
+        A.n++;
+        console.log(b.n);
+        console.log(c.n); */
+
+
+        /* var a = 10.42;
+        console.log(parseInt(a));
+        console.log(Math.floor(a));
+        console.log(Math.ceil(a));
+        console.log(a.split('.')[0]); */
+
+        /* var a = 0.2;
+        var b = 0.6;
+        console.log(parseFloat(0.2 + 0.4).toFixed(1));
+        console.log(parseFloat(0.2 + 0.6).toPrecision(1)); */
+
+
+        /* // 空字符串返回false
+        var a = '';
+        console.log(Boolean(a));
+        // 空字符串隐式转换数字为0
+        console.log(a == 0); */
+
+
+        /* //空数组返回true
+        var a = [];
+        console.log(Boolean(a));
+        //返回true  []转换为布尔值为true  转换为数字为0   因为0=0 所已返回true
+        console.log(a == 0) //返回 */
+
+        /* //空对象返回true
+        var a = {};
+        console.log(Boolean(a)); */
+
+        /* var myObject = {
+            foo: 'bar',
+            func: function () {
+                var that = this;
+                console.log(this.foo);
+                console.log(that.foo);
+                (function () {
+                    console.log(this.foo);
+                    console.log(that.foo);
+                }())
+            }
+        }
+        myObject.func(); */
+
+        /* console.log(Number(null))
+        console.log(Number([]))
+        console.log(Number(null))
+        console.log(0 == {}) */
+
+        /* var arr = [{
+                a: 1
+            },
+            {}
+        ]
+        arr.forEach(function (item, idx) {
+            item.b = idx;
+        })
+        console.log(arr); */
+    </script>
+</body>
+
+</html>

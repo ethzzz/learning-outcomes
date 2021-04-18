@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function () {
+            var btn = document.getElementById('btn1');
+            var psw = document.getElementById('psw');
+            var flag = 0;
+            btn.onclick = function () {
+                if (flag == 0) {
+                    psw.type = 'text';
+                    flag = 1;
+                } else {
+                    psw.type = 'password';
+                    flag = 0;
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <input type="button" value="切换" id='btn1'>
+        <input type="password" name="" id="psw">
+    </div>
+</body>
+
+</html>

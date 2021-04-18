@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 50px;
+            border: 2px solid black;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <button>获取系统的时间</button>
+    <div>当前时间</div>
+    <div id=div1></div>
+    <script>
+        var btn = document.querySelector('button');
+        var div = document.querySelector('div');
+        btn.onclick = function () {
+            div.innerText = getTime();
+        }
+
+        var add = setInterval("getTime()", 1000);
+
+        function stop() {
+            clearInterval(add);
+        }
+
+        function getTime() {
+            var date1 = new Date();
+            var year = date1.getFullYear();
+            var month = date1.getMonth() + 1;
+            var day = date1.getDay();
+            var dates = date1.getDate();
+            var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+            var h = date1.getHours();
+            h = h < 10 ? '0' + h : h;
+            var m = date1.getMinutes();
+            m = m < 10 ? '0' + m : m;
+            var s = date1.getSeconds();
+            s = s < 10 ? '0' + s : s;
+            return '今天是' + year + '年' + month + '月' + dates + '日' + ' ' + arr[day] + ' ' + h + '时' + m + '分' +
+                s + '秒';
+        }
+
+        var div1 = document.querySelector('#div1');
+        div1.innerHTML = getTime();
+
+
+        //innerText不识别html标签  非标准  去除空格和换行
+        //innerHtml识别html标签  W3C标准 保留空格和换行
+    </script>
+</body>
+
+</html>

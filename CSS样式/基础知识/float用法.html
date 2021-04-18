@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 先用标准流的父元素排列上下位置，
+        之后内部子元素采取浮动排列左右位置，符合网页布局第一准则 */
+        /* 浮动的盒子只会影响浮动盒子后面的标准流，不会影响前面的标准流 */
+        div {
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+            background-color: lavender;
+        }
+
+        .div1 {
+            width: 150px;
+            height: 400px;
+            float: left;
+            background-color: lightcoral;
+        }
+
+        .div2 {
+            width: 150px;
+            height: 400px;
+            float: left;
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="div1"></div>
+        <div class="div2"></div>
+    </div>
+</body>
+
+</html>

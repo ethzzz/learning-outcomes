@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: none;
+        }
+
+        a {
+            border: 1px solid black;
+        }
+
+        #ul1 li ul li {
+            border: 1px solid black;
+            width: 50px;
+        }
+
+        #ul1 li ul {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id='ul1'>
+        <li>
+            <a href="">A</a>
+            <ul class='ul2'>
+                <li>a</li>
+                <li>b</li>
+                <li>c</li>
+            </ul>
+        </li>
+        <li>
+            <a href="">B</a>
+            <ul class='ul2'>
+                <li>a</li>
+                <li>b</li>
+                <li>c</li>
+            </ul>
+        </li>
+        <li>
+            <a href="">C</a>
+            <ul class='ul2'>
+                <li>a</li>
+                <li>b</li>
+                <li>c</li>
+            </ul class='ul2'>
+        </li>
+        <li>
+            <a href="">D</a>
+            <ul class='ul2'>
+                <li>a</li>
+                <li>b</li>
+                <li>c</li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        var ul1 = document.querySelector('#ul1');
+        var lis = ul1.children;
+        console.log(lis[0].children[1]);
+        for (var i = 0; i < lis.length; i++) {
+            lis[i].onmouseover = function () {
+                this.children[1].style.display = 'block';
+            }
+            lis[i].onmouseout = function () {
+                this.children[1].style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>

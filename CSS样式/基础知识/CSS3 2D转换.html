@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+
+        #div1 {
+            margin: 30px;
+            width: 200px;
+            height: 100px;
+            background-color: yellow;
+            /* rotate(angle)*/
+            /* 元素顺时针旋转给定的角度，允许负值，元素将逆时针旋转 */
+            transform: rotate(10deg);
+            /* -ms-transform: rotate(9deg); */
+            /* Internet Explorer */
+            /* -moz-transform: rotate(9deg); */
+            /* Firefox */
+            /* -webkit-transform: rotate(9deg); */
+            /* Safari 和 Chrome */
+            /* -o-transform: rotate(9deg); */
+            /* Opera */
+        }
+
+        #div2 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            /* translate(x,y)方法 元素从其当前位置移动，根据给定的x坐标和y坐标移动到相应的位置 */
+            /* translateX(n) translateY(n) 分别移动x轴或y轴的距离 */
+            transform: translate(30px, 100px);
+        }
+
+        #div3 {
+            margin: 150px;
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            /* scale(x,y)方法  元素会根据给定的宽度和高度来改变几倍的尺寸  */
+            /* scaleX(n) scaleY(n) 分别改变宽高n倍 */
+            transform: scale(2, 2);
+        }
+
+        #div4 {
+            /* skew(x-angle,y-angle)方法。元素翻转给定的角度，根据给定的x轴和y轴角度翻转 */
+            /* skewX(angle) skewY(angle) 分别绕x轴或y轴旋转给定的角度 */
+            transform: skew(30deg, 30deg);
+        }
+
+        #div5 {
+            /* matrix(n,n,n,n,n,n)把所有2D转换方法组合在一起 */
+            /* 需要李哥参数，包含数学函数，允许您：旋转、缩放、移动以及倾斜元素。 */
+            /* 以下为将元素旋转30° */
+            transform: matrix(0.866, 0.5, -0.5, 0.866, 0, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">hellow world</div>
+    <div id="div2">hellow world</div>
+    <div id="div3">hellow world</div>
+    <div id="div4">hellow world</div>
+    <div id="div5">hellow world</div>
+</body>
+
+</html>

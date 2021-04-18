@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .login-header {
+            background-color: gray;
+            text-align: center;
+        }
+
+        #login {
+            display: none;
+            position: fixed;
+            width: 400px;
+            height: 250px;
+            top: 50%;
+            left: 50%;
+            background-color: white;
+            transform: translate(-50%, -50%);
+        }
+
+        #title {
+            text-align: center;
+            font-size: 22px;
+            height: 60px;
+            line-height: 60px;
+        }
+
+        #title span {
+            position: absolute;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            right: -20px;
+            top: -14px;
+            background-color: white;
+            font-size: 16px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 40px;
+        }
+
+        .mask {
+            display: none;
+            width: 100%;
+            height: 1400px;
+            background-color: gray;
+        }
+
+        .login-input-content {
+            position: relative;
+            height: 200px;
+            font-size: 18px;
+        }
+
+        .login-input {
+            margin: 10px;
+            height: 50px;
+            text-align: center;
+        }
+
+        .login-input label {
+            position: absolute;
+            right: 300px;
+        }
+
+        .login-input input {
+            position: absolute;
+            height: 22px;
+            width: 260px;
+            right: 20px;
+        }
+
+        .login-Btn {
+            width: 200px;
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid gray;
+            text-align: center;
+            font-size: 22px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-header"><a href="javascript:void(0);" class="link">点击，弹出登录框</a></div>
+    <div id="login" class="login">
+        <div id="title" class="login-title">登录会员
+            <span><a id="closeBtn" href="javascript:void(0)" class="closeBtn">关闭</a></span>
+        </div>
+        <div class="login-input-content">
+            <div class="login-input">
+                <label for="">用户名:</label>
+                <input type="text" id="user_name" name="info[username]" placeholder="请输入用户名">
+            </div>
+            <div class="login-input">
+                <label for="">登录密码:</label>
+                <input type="password" id="user_psw" name="info[userpassword]" placeholder="请输入登录密码">
+            </div>
+            <div id="loginBtn" class="login-Btn">
+                <a href="javascript:void(0);" id="login-button-submit">登录</a>
+            </div>
+
+        </div>
+    </div>
+    <!-- 遮罩层 -->
+    <div class="mask"></div>
+    <script>
+        var link = document.querySelector('.link');
+        var login = document.querySelector('#login');
+        var mask = document.querySelector('.mask');
+        var closeBtn = document.querySelector('.closeBtn');
+        var title = document.querySelector('#title');
+        // 点击弹出 显示登录框和遮罩层
+        link.addEventListener('click', function () {
+            login.style.display = 'block';
+            mask.style.display = 'block';
+        });
+        // 点击关闭按钮  隐藏登录框和遮罩层
+        closeBtn.addEventListener('click', function () {
+            login.style.display = 'none';
+            mask.style.display = 'none';
+        })
+        // 拖拽登录框
+        title.addEventListener('mousedown', function (e) {
+            var x = e.pageX - login.offsetLeft;
+            var y = e.pageY - login.offsetTop;
+            document.addEventListener('mousemove', mousemove);
+
+            function mousemove(e) {
+                login.style.left = e.pageX - x + 'px';
+                login.style.top = e.pageY - y + 'px';
+            }
+            document.addEventListener('mouseup', function () {
+                document.removeEventListener('mousemove', mousemove);
+            })
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1 */
+        input[value] {
+            color: hotpink;
+        }
+
+        /* 2 */
+        input[ type=text] {
+            color: hotpink;
+        }
+
+        /* 3 */
+        div[class^=icon] {
+            color: red;
+        }
+
+        section[class$=data] {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1.利用属性选择器可以不用借助于类或者id选择器 -->
+    <input type="text" value="请输入用户名"><br />
+    <input type="text"><br />
+    <!-- 2.属性选择器可以选择属性=值得某些元素 -->
+    <input type="text" name="" id=""><br />
+    <input type="password" name="" id=""><br />
+    <!-- 属性选择器可以选择属性值开头或结尾的某些元素 -->
+    <div class="icon1">小图标1</div>
+    <div class="icon2">小图标2</div>
+    <div class="icon3">小图标3</div>
+    <div class="icon4">小图标4</div>
+    <div>我是打酱油的</div>
+    <section class="icon-data">我是一只鸟</section>
+    <section class="icon-data">我是一只鸟</section>
+    <section class="icon-dif">我是一只鸟</section>
+</body>
+
+</html>

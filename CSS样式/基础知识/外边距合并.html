@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: navajowhite;
+        }
+
+        /* 垂直外边距只会取较大的那个值，称为相邻块元素垂直外边距的合并 */
+        .top {
+            margin-bottom: 100px;
+        }
+
+        .bottom {
+            margin-top: 200px;
+        }
+
+        /* 嵌套元素塌陷  子元素添加外边距会使父元素增加外边距
+        (选择两者较大值为父元素外边距) 而子元素相对于父元素不会改变位置 */
+        .blue {
+            width: 400px;
+            height: 400px;
+            background-color: blue;
+            margin-top: 50px;
+            /* border: 1px solid transparent;
+            padding-top: 1px; */
+            overflow: hidden;
+        }
+
+        .red {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin-top: 100px;
+        }
+
+        /* 解决方法
+        1、给父元素添加上边框
+        2、给父元素定义上内边距
+        3、给父元素定义overflow:hidden; */
+    </style>
+</head>
+
+<body>
+    <div class="top"></div>
+    <div class="bottom"></div>
+    <div class="blue">
+        <div class="red"></div>
+    </div>
+</body>
+
+</html>

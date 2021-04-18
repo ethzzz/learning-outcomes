@@ -1,0 +1,114 @@
+/* 声明字体图标 这里一定要注意路径的变化 */
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?tomleg');
+    src: url('../fonts/icomoon.eot?tomleg#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?tomleg') format('truetype'),
+        url('../fonts/icomoon.woff?tomleg') format('woff'),
+        url('../fonts/icomoon.svg?tomleg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+/* 版心样式 */
+.w {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.style_red {
+    color: #c81623;
+}
+
+/* 快捷导航栏 */
+.shortcut {
+    height: 31px;
+    line-height: 31px;
+    background-color: #f1f1f1;
+}
+
+.shortcut ul li {
+    float: left;
+}
+
+/* 选取快速导航栏右侧的奇数小li */
+.shortcut .fr ul li:nth-child(odd) {
+    cursor: pointer;
+}
+
+/* 选取快速导航栏右侧的偶数小li */
+.shortcut .fr ul li:nth-child(even) {
+    width: 1px;
+    height: 12px;
+    background-color: #666666;
+    margin: 9.5px 15px 0;
+}
+
+.arrow_down::after {
+    content: '\e91e';
+    font-family: 'icomoon';
+    margin-left: 6px;
+}
+
+/* 头部header 制作 */
+.header {
+    position: relative;
+    height: 105px;
+}
+
+/* Logo  */
+.logo {
+    position: absolute;
+    top: 25px;
+    width: 171px;
+    height: 61px;
+    background-color: skyblue;
+}
+
+.logo a {
+    display: block;
+    width: 171px;
+    height: 61px;
+    /* 淘宝做法 */
+    text-indent: -9999em;
+    overflow: hidden;
+    /* 京东做法 */
+    font-size: 0;
+    background: url(../images/logo.png) no-repeat;
+}
+
+.search {
+    position: absolute;
+    top: 25px;
+    left: 300px;
+    border: 2px solid #b1191a;
+    width: 538px;
+    height: 36px;
+    box-sizing: border-box;
+}
+
+.search input {
+    float: left;
+    width: 455px;
+    height: 32px;
+    font-size: 16px;
+    text-indent: 0.5em;
+}
+
+.search button {
+    float: left;
+    width: 79px;
+    height: 32px;
+    background-color: red;
+    font-size: 16px;
+    color: #fff;
+}

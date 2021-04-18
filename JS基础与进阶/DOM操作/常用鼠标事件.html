@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 40000px;
+            width: 40000px;
+        }
+    </style>
+</head>
+
+<body>
+    我是一段不愿意分享的文字
+    <script>
+        //1.contextmenu 禁用右键菜单
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        })
+
+        //2.禁止选中文字 selectstart
+        document.addEventListener('selectstart', function (e) {
+            e.preventDefault();
+        })
+
+
+        document.addEventListener('click', function (e) {
+            console.log(e);
+            console.log(e.clientX); //获取鼠标相对于浏览器可视区的X坐标
+            console.log(e.clientY); //获取鼠标相对于浏览器可视区的Y坐标
+            console.log(e.pageX); //获取鼠标相对于文档页面的X坐标
+            console.log(e.pageY); //获取鼠标相对于文档页面的Y坐标
+        })
+
+        document.addEventListener('mousemove', function (e) {
+            console.log('当前鼠标的X轴是' + e.pageX, '当前鼠标的Y轴是' + e.pageY);
+
+        })
+    </script>
+</body>
+
+</html>

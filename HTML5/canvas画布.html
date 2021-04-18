@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas1" width="200" height="200" style="border: 1px solid black;"></canvas>
+    <canvas id="myCanvas2" width="200" height="200" style="border: 1px solid black;"></canvas>
+    <canvas id="myCanvas3" width="200" height="200" style="border: 1px solid black;"></canvas>
+    <canvas id="myCanvas4" width="200" height="200" style="border: 1px solid black;"></canvas>
+    <canvas id="myCanvas5" width="200" height="200" style="border: 1px solid black;"></canvas>
+    <script>
+        var c1 = document.querySelector('#myCanvas1');
+        var c2 = document.querySelector('#myCanvas2');
+        var c3 = document.querySelector('#myCanvas3');
+        var c4 = document.querySelector('#myCanvas4');
+        var c5 = document.querySelector('#myCanvas5');
+        // 1.绘制矩形
+        var cxt1 = c1.getContext('2d');
+        cxt1.fillStyle = "#FF0000";
+        // 从（10,20）坐标处绘制一个150×50的矩形
+        cxt1.fillRect(10, 20, 150, 50);
+        // 2.绘制线段
+        var cxt2 = c2.getContext('2d');
+        // 从(0，0)坐标处为起点，依次连接到(150,50)->(10,50)->(0,0)的线段
+        cxt2.moveTo(0, 0);
+        cxt2.lineTo(150, 50);
+        cxt2.lineTo(10, 50);
+        cxt2.lineTo(0, 0);
+        cxt2.stroke();
+        // 3.绘制圆形
+        var cxt3 = c3.getContext('2d');
+        cxt3.fillStyle = "#FF0000";
+        cxt3.beginPath();
+        // 以(100,100)为圆形，半径为50画圆
+        cxt3.arc(100, 100, 50, 0, Math.PI * 2, true);
+        cxt3.closePath();
+        cxt3.fill();
+        // 4.绘制渐变颜色
+        var cxt4 = c4.getContext("2d");
+        var grd = cxt4.createLinearGradient(0, 0, 175, 50);
+        grd.addColorStop(0, "#FF0000");
+        grd.addColorStop(1, "#00FF00");
+        cxt4.fillStyle = grd;
+        cxt4.fillRect(0, 0, 175, 50);
+        // 5.将图像放置在画布上
+        var cxt5 = c5.getContext("2d");
+        var img = new Image();
+        img.src = "../image/touxiang.jpg";
+        cxt5.drawImage(img, 0, 0);
+    </script>
+</body>
+
+</html>

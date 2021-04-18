@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="">
+    <script>
+        //某个键盘按键弹起时触发
+        // document.addEventListener('keyup', function () {
+        //     console.log('我弹起了');
+        // })
+
+        //某个键盘按键按下时触发
+        // document.addEventListener('keydown', function () {
+        //     console.log('我按下了down');
+        // })
+
+        //某个键盘按键按下时触发  不能识别功能键  比如shifr ctrl 左右键
+        // document.addEventListener('keypress', function () {
+        //     console.log('我按下了press');
+        // })
+
+        //执行顺序  keydown->keypress->keyup
+
+
+        //keyCode 获取按键的ACSII码
+        //keyup 和 keydown 事件不区分字母大小写   A和a返回的都是65
+        // document.addEventListener('keyup', function (e) {
+        //     console.log('keyup:' + e.keyCode);
+        // })
+        // document.addEventListener('keydown', function (e) {
+        //     console.log('keydown:' + e.keyCode);
+        // })
+        // //keypress 事件区分字母大小写 
+        // document.addEventListener('keypress', function (e) {
+        //     console.log('keypress:' + e.keyCode);
+        // })
+
+        var text = document.querySelector('input');
+        document.addEventListener('keyup', function (e) {
+            if (e.keyCode === 89) {
+                text.focus();
+            }
+        })
+    </script>
+</body>
+
+</html>

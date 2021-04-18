@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li>123</li>
+            <li>123</li>
+            <li>123</li>
+        </ul>
+    </div>
+    <script>
+        var div = document.querySelector('div');
+        div.addEventListener('click', function (e) {
+
+            //this返回绑定事件的元素  e.target返回触发事件的元素
+            console.log(this);
+            console.log(e.target);
+        })
+
+        //阻止默认默认(行为)事件  让连接不跳转  提交按钮不提交
+        //e.preventDefault();  普通浏览器  e.returnValue(); 低版本浏览器
+        //兼容性处理    return false  //return 后面的代码不执行
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 父级添加 overflow */
+        .demo {
+            width: 800px;
+            border: 1px solid black;
+            /* 清除浮动 */
+            /* overflow: hidden; */
+        }
+
+        /* :after伪元素清除法 */
+        .demo:after {
+            /* content必要属性 */
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .demo {
+            /* IE6.7 专有 */
+            zoom: 1;
+        }
+
+        /* 双伪元素清除浮动 */
+        .demo:before,
+        .demo:after {
+            content: "";
+            display: table;
+        }
+
+        .demo:after {
+            clear: both;
+        }
+
+        .demo {
+            zoom: 1;
+        }
+
+
+        .demo .div1 {
+            width: 200px;
+            height: 200px;
+            background-color: greenyellow;
+            margin-right: 10px;
+            float: left;
+        }
+
+        /* W3C推荐  额外标签法
+        注意：要求这个元素必须是块级元素 
+        优点：通俗易懂
+        缺点：添加许多无意义元素 结构化较差*/
+        .demo .clear {
+            width: 0;
+            height: 0;
+            /* clear: both; */
+        }
+
+        .info {
+            height: 300px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="demo">
+        <div class="div1"></div>
+        <div class="div1"></div>
+        <div class="div1"></div>
+        <div class="clear"></div>
+    </div>
+    <div class="info"></div>
+</body>
+
+</html>

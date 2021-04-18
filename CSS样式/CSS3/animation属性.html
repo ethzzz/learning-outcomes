@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 200px;
+            background-color: gray;
+            /* 规定动画的名称(必须) */
+            animation-name: move;
+            /* 规定动画完成一个周期所花费的秒或毫秒。默认是0 (必须) */
+            animation-duration: 5s;
+            /* 规定动画的速度曲线 默认是ease */
+            animation-timing-function: ease-in-out;
+            /* 规定动画何时开始 默认是0 */
+            animation-delay: 1s;
+            /* 规定动画被播放的次数 默认是1 还有infinite */
+            animation-iteration-count: 1;
+            /* 规定动画是或否在下一周期你想播放，默认是 normal,  alternate 逆播放 */
+            animation-direction: normal;
+            /* 规定动画是否正在运行或暂停  默认是 running ,还有paused */
+            animation-play-state: running;
+            /* 规定动画结束后的状态，保持forwards 和回到起始 backwards */
+            animation-fill-mode: forwards;
+
+            /* 复合写法 */
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+        }
+
+        @keyframes move {
+            0% {
+                left: 0;
+                top: 0;
+            }
+
+            25% {
+                left: 1000px;
+                top: 0;
+            }
+
+            50% {
+                left: 1000px;
+                top: 500px;
+            }
+
+            75% {
+                left: 0;
+                top: 500px;
+            }
+
+            100% {
+                left: 0;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="demo"></div>
+</body>
+
+</html>

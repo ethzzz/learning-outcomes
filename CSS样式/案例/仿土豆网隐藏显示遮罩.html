@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            /* 使网页变灰 */
+            /* filter: grayscale(100%); */
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            position: relative;
+            margin: 100px auto;
+            width: 556px;
+            height: 400px;
+        }
+
+        .box::before {
+            /* 隐藏遮罩层 */
+            content: "";
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3) url("../../image/bofang.png") no-repeat center;
+        }
+
+        .box:hover::before {
+            display: block;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="../../image/tudou.png" alt="">
+    </div>
+    <div class="box">
+        <img src="../../image/tudou.png" alt="">
+    </div>
+    <div class="box">
+        <img src="../../image/tudou.png" alt="">
+    </div>
+    <div class="box">
+        <img src="../../image/tudou.png" alt="">
+    </div>
+    <script>
+        /* console.log(typeof (Object.keys()));
+        console.log(typeof (String.prototype.split()));
+        console.log(typeof (Array.prototype.join()));
+        console.log(typeof (Promise.all())); */
+
+
+        /* console.log(typeof myObj == "undefined");
+        console.log(typeof myObj === undefined);
+        console.log(typeof myObj === null);
+        console.log(!this.hasOwnProperty('myObj')); */
+    </script>
+</body>
+
+</html>

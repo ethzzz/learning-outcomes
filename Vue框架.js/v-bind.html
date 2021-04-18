@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <style>
+        .active {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- v-bind:属性   操作元素属性值  简写省略v-bind 只需要写 :属性-->
+        <img v-bind:src="imgaddress" v-bind:title="imgTitle" alt="">
+        <!-- 采用三元表达式 -->
+        <img :src="imgaddress" :title="imgTitle" alt="" :class="isActive?'active':'0'" @click='click'>
+        <!-- 采用对象方式 -->
+        <img :src="imgaddress" :title="imgTitle" alt="" :class="{active:isActive}" @click='click'>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                imgaddress: "../image/demo-1.png",
+                imgTitle: "这是一张图片",
+                isActive: false
+            },
+            methods: {
+                click: function () {
+                    this.isActive = !this.isActive;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

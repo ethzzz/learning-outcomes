@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Count numbers: <output id="result"></output></p>
+    <button onclick="startWorker()">Start Worker</button>
+    <button onclick="stopWorker()">Stop Worker</button>
+    <br /><br />
+    <script>
+        // Web Worker 位于外部文件中  无法访问 window document parent 对象
+        var w;
+
+        function startWorker() {
+            if (typeof (Worker) !== "undefined") {
+                if (typeof (w) == "undefined") {
+                    console.log("Yes! Web worker support");
+                    w = new Worker("demo_workers.js");
+                }
+                w.onmessage = function (event) {
+                    document.querySelector('#result').innerHTML = event.data;
+                }
+            } else {
+                console.log("Sorry! No Web Worker support");
+            }
+        }
+
+        function stopWorker() {
+            w.terminate();
+        }
+    </script>
+</body>
+
+</html>

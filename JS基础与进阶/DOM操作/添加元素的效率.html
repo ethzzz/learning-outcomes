@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+
+    </div>
+    <script>
+        var d1 = +new Date();
+
+        //innerHtml拼接字符串的形式
+        // var div = document.querySelector('div');
+        // for (var i = 0; i < 100; i++) {
+        //     div.innerHTML += '<div>删除</div>';
+        // }
+
+        //createElement
+        for (var i = 0; i < 100; i++) {
+            var div = document.createElement('div');
+            div.style.width = '100px';
+            div.style.height = '100px';
+            div.style.border = '1px solid red';
+            document.body.appendChild(div);
+        }
+
+        //innerHtml数组形式
+        // var arr = [];
+        // for (var i = 0; i < 100; i++) {
+        //     arr.push('<a href ="#">百度</a>');
+        // }
+        // var div = document.querySelector('div');
+        // div.innerHTML = arr.join();
+
+        var d2 = +new Date();
+        console.log(d2 - d1);
+    </script>
+</body>
+
+</html>

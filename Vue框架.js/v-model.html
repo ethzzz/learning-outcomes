@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- v-model 指令的作用是便捷的设置和获取表单元素的值
+         绑定的数据会和表单元素值相关联 
+         绑定的数据←→表单元素的值 -->
+    <div id="app">
+        <Button @click="change">修改message的值</Button>
+        <input type="text" v-model="message" name="" id="" @keyup.enter="alert">
+        <h2>{{ message }}</h2>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                message: "黑马程序员"
+            },
+            methods: {
+                alert: function () {
+                    alert(this.message);
+                },
+                change: function () {
+                    this.message = "大前端";
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

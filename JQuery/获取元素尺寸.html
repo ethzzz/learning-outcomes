@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.5.1.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            margin: 100px;
+            padding: 100px;
+            border: 1px solid #000;
+            background-color: gray;
+            font-size: 16px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <button id="btn1">获取元素的宽高(不包括内外边距和边框) </button>
+    <button id="btn2">获取元素的宽高(包括内边距) </button>
+    <button id="btn3">获取元素的宽高(包括内边距和边框) </button>
+    <button id="btn4">获取元素的宽高(包括内外边距和边框) </button><br />
+    <p>width()方法返回或设置元素的宽(不包含内外边距和边框)</p>
+    <p>height()方法返回或设置元素的高(不包含内外边距和边框)</p>
+    <p>innerwidth()方法返回元素的宽(包含内边距)</p>
+    <p>innerheight()方法返回元素的高(包含内边距)</p>
+    <p>outerwidth()方法返回元素的宽(包含内边距和边框)</p>
+    <p>outerheight()方法返回元素的高(包含内边距和边框)</p>
+    <p>outerwidth(true)方法返回元素的宽(包含内外边距和边框)</p>
+    <p>outerheight(true)方法返回元素的高(包含内外边距和边框)</p>
+    <script>
+        $(document).ready(function () {
+            $('#btn1').click(function () {
+                var txt = "";
+                txt += "此元素的高为" + $('div').height() + ";" + "<br>";
+                txt += "此元素的宽为" + $('div').width() + ";";
+                $('div').html(txt);
+            })
+            $('#btn2').click(function () {
+                var txt = "";
+                txt += "此元素的高为" + $('div').innerHeight() + ";" + "<br>";
+                txt += "此元素的宽为" + $('div').innerWidth() + ";";
+                $('div').html(txt);
+            })
+            $('#btn3').click(function () {
+                var txt = "";
+                txt += "此元素的高为" + $('div').outerHeight() + ";" + "<br>";
+                txt += "此元素的宽为" + $('div').outerWidth() + ";";
+                $('div').html(txt);
+            })
+            $('#btn4').click(function () {
+                var txt = "";
+                txt += "此元素的高为" + $('div').outerHeight(true) + ";" + "<br>";
+                txt += "此元素的宽为" + $('div').outerWidth(true) + ";";
+                $('div').html(txt);
+            })
+        })
+    </script>
+</body>
+
+</html>

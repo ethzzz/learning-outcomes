@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas {
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Canvas元素 -->
+    <canvas id="myCanvas1" width="200" height="200"></canvas>
+    <canvas id="myCanvas2" width="200" height="200"></canvas>
+    <canvas id="myCanvas3" width="200" height="200"></canvas>
+    <canvas id="myCanvas4" width="200" height="200"></canvas>
+    <canvas id="myCanvas5" width="200" height="200"></canvas>
+    <!-- Canvas本身没有绘图能力，所有的绘制需要通过JavaScript内部完成 -->
+    <script>
+        /** @type {HTMLCanvasElement} */
+        var mc1 = document.querySelector("#myCanvas1");
+        var mc2 = document.querySelector("#myCanvas2");
+        var mc3 = document.querySelector("#myCanvas3");
+        var mc4 = document.querySelector("#myCanvas4");
+        var mc5 = document.querySelector("#myCanvas5");
+        var mcxt1 = mc1.getContext("2d");
+        var mcxt2 = mc2.getContext("2d");
+        var mcxt3 = mc3.getContext("2d");
+        var mcxt4 = mc4.getContext("2d");
+        var mcxt5 = mc5.getContext("2d");
+        mcxt1.fillStyle = "#FF0000";
+        // 在画布上绘制 150x75 的矩形，从左上角开始 (0,0)。
+        mcxt1.fillRect(0, 0, 150, 75);
+        // 绘制线条
+        mcxt2.moveTo(10, 10);
+        mcxt2.lineTo(150, 50);
+        mcxt2.lineTo(10, 50);
+        mcxt2.stroke();
+        // 绘制圆形
+        mcxt3.fillStyle = "#FF0000";
+        mcxt3.beginPath();
+        mcxt3.arc(70, 18, 15, 0, Math.PI * 2, true);
+        mcxt3.closePath();
+        mcxt3.fill();
+        // 绘制渐变背景
+        var grd = mcxt4.createLinearGradient(0, 0, 175, 50);
+        grd.addColorStop(0, "#FF0000");
+        grd.addColorStop(1, "#00FF00");
+        mcxt4.fillStyle = grd;
+        mcxt4.fillRect(0, 0, 175, 50);
+        // 将图片放置在画布中
+        var img = new Image();
+        img.src = "../image/bofang.png";
+        mcxt5.drawImage(img, 0, 0);
+    </script>
+</body>
+
+</html>

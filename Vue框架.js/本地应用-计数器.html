@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <style>
+        #app {
+            width: 300px;
+            height: 40px;
+            margin: 100px auto;
+        }
+
+        #app button {
+            float: left;
+            width: 100px;
+            height: 40px;
+            font-size: 16px;
+        }
+
+        #app span {
+            float: left;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            background-color: gray;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <button @click='sub'> - </button>
+        <span>
+            {{ number }}
+        </span>
+        <button @click='add'> + </button>
+    </div>
+    <script>
+        var app = new Vue({
+            el: " #app",
+            data: {
+                number: 0,
+                disabled1: true,
+                disabled2: false
+            },
+            methods: {
+                add: function () {
+                    if (this.number < 10) {
+                        this.number++;
+
+                    } else {
+                        alert('已经最大了');
+                        disabled = true;
+                    }
+                },
+                sub: function () {
+                    if (this.number > 0) {
+                        this.number--;
+                    } else {
+                        alert('已经最小了');
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

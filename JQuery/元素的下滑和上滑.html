@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header,
+        main {
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background-color: gray;
+            border: 1px solid black;
+        }
+
+        main {
+            height: 200px;
+            line-height: 200px;
+            /* display: none; */
+        }
+    </style>
+</head>
+
+<body>
+    <header>我是头部</header>
+    <main>我是主体</main>
+    <script src="jquery-3.5.1.js"></script>
+    <script>
+        /* $('header').click(function () {
+            $('main').slideDown();
+        }) */
+        /* $('header').click(function () {
+            $('main').slideUp();
+        }) */
+        // 方法连接
+        $('header').click(function () {
+            $('main').slideDown()
+                .slideUp();
+        })
+        // $('header').click(function () {
+        //     $('main').slideToggle("slow", console.log('1'));
+        // })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <button type="button" class="get">get请求</button>
+    <button type="button" class="post">post请求</button>
+
+    <!-- axios必须先导入才可以使用 -->
+    <!-- 使用get或post方法即可发送对应的请求 -->
+    <!-- then方法中的回调函数会在请求成功或失败时触发 -->
+    <!-- 通过回调函数的形参可以获取响应内容或错误信息 -->
+    <!-- get -->
+    <!-- axios.get(地址?ket=value&key2=values).then(function(response){},function(err){}) -->
+    <!-- post -->
+    <!-- axios.post(地址,{key:value,key2:value2}).then(function(response){},function(err){}) -->
+    <script>
+        var get = document.querySelector(".get");
+        var post = document.querySelector('.post');
+        var body = document.body;
+        get.onclick = function () {
+            axios.get("https://autumnfish.cn/api/joke/list?num=6")
+                .then(function (response) {
+                    console.log(response);
+                }),
+                function (err) {
+                    console.log(err);
+                }
+        }
+        post.onclick = function () {
+            axios.post("https://autumnfish.cn/api/user/reg", {
+                    username: "盐焗西蓝花"
+                })
+                .then(function (response) {
+                    console.log(response)
+                }),
+                function (err) {
+                    console.log(err);
+                }
+        }
+    </script>
+</body>
+
+</html>

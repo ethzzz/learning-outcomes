@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 只会解析为文本 -->
+        <p v-text="message"></p>
+        <!-- 设置元素的innerHTML 解析html结构使用 -->
+        <p v-html="message"></p>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                // message: "黑马程序员"
+                message: "<a href='http://www.baidu.com'> 百度</a>"
+            }
+        })
+    </script>
+</body>
+
+</html>

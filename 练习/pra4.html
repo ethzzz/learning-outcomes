@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 0;
+            height: 0;
+            border: 10px solid red;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <table border="0" cellspaing="10">
+            <tr>
+                <th width="150" height="150" style="border-radius:50%;border:1px solid black">Header</th>
+            </tr>
+        </table>
+    </div>
+    <script>
+        /* function Demo(n) {
+            var k = parseInt((Math.sqrt(1 + 8 * n) - 1) / 2);
+            var rea = n - (k * (k + 1)) / 2;
+            var result = 0;
+            for (let i = 0; i <= k; i++) {
+                result = result + (i * i);
+            }
+            console.log(result + (k + 1) * rea);
+        }
+        Demo(6); */
+
+        /* var foo = {
+            n: 1
+        };
+        (function (foo) {
+            console.log(1, foo.n);
+            foo.n = 3;
+            var foo = {
+                n: 2
+            };
+            console.log(2, foo.n)
+        })(foo)
+        console.log(3, foo.n) */
+
+        /* var a = 10.42;
+        console.log(parseInt(a));
+        console.log(Math.floor(a));
+        console.log(Math.ceil(a));
+        console.log(a.split('.')[0]); */
+
+        /* function golfScore(par, strokes) {
+            // Only change code below this line
+            if (strokes == 1) {
+                return "Hole-in-one!";
+            } else if (strokes <= par - 2) {
+                return "Eagle";
+            } else if (strokes == par - 1) {
+                return "Birdie";
+            } else if (strokes == par) {
+                return "Par";
+            } else if (strokes == par + 1) {
+                return "Bogey";
+            } else if (strokes == par + 2) {
+                return "Double Bogey";
+            } else if (strokes >= par + 3) {
+                return "Go Home!";
+            }
+            return "Change Me";
+            // Only change code above this line
+        }
+
+        // Change these values to test
+        golfScore(5, 4); */
+
+
+        /* function Foo() {
+            getName = function () {
+                console.log(1)
+            }
+            return this;
+        }
+        Foo.getName = function () {
+            console.log(2)
+        }
+        Foo.prototype.getName = function () {
+            console.log(3)
+        }
+        var geteName = function () {
+            console.log(4)
+        }
+
+        function getName() {
+            console.log(5)
+        }
+
+        // 输出结果
+        Foo.getName(); //2
+        getName(); //5
+        Foo().getName(); //1
+        getName(); //1
+        new Foo.getName(); //2
+        new Foo().getName(); //3
+        new new Foo().getName(); //3 */
+
+
+        /* setTimeout(function () {
+            console.log(1)
+        })
+        new Promise(function (resolve, reject) {
+            console.log(2);
+            resolve(3)
+        }).then(function (val) {
+            console.log(val)
+        })
+        console.log(4)
+        // console.log(4) */
+
+        /* var a = [1, 2];
+        var b = [3, [4]];
+        var c = [5, [6, 7, [8, 9]]]
+        console.log(a.concat(b));
+        console.log(c.forEach());
+        console.log(c.map()); */
+
+
+        /* var a = [1, 2, 3, 4, 5, 6]
+        var b = a.join(',');
+        console.log(b); */
+
+
+        /* var a = document.querySelectorAll('p');
+        var str1 = a[0].innerText;
+        // console.log(str1);
+        var str2 = a[1].innerText;
+        // console.log(str2);
+        var arr = Array(str1).concat(Array(str2));
+        console.log(arr); */
+
+
+        // var str = 'hello';
+        // console.log(str.split('').reverse().join(''));
+
+
+        /* function test(A, m, B, n) {
+
+            console.log(A.concat(B))
+        }
+        test([], 0, [1], 1); */
+
+        /* for (var i = 0; i < 5; i++) {
+            requestAnimationFrame(() => console.log(i));
+        } */
+
+
+        /* var foo = 'Hello';
+        (function () {
+            var bar = 'World';
+            alert(foo + bar);
+        })();
+        alert(foo + bar); */
+
+        /* (function () {
+            'use strict'
+            console.log(this.location)
+        })() */
+
+        /* var x = new Boolean(false);
+        if (x) {
+            console.log('true');
+        } */
+
+        /* function demo() {
+            message = 'hi';
+        }
+        demo();
+        console.log(message); */
+
+        /* var a = 'a23';
+        console.log(number(a)); */
+
+        for (var propName in window) {
+            console.log(propName);
+        }
+    </script>
+</body>
+
+</html>

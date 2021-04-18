@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [];
+        var sum = null;
+        var max = 0;
+        var min = 0;
+        for (var i = 0; i < 10; i++) {
+            function getrandom(min, max) {
+                return Math.floor(Math.random() * (max - min + 1) + min);
+            }
+            var a = getrandom(0, 100);
+            arr[i] = a;
+            sum += a;
+        }
+        console.log(arr);
+        console.log(a / 10);
+        arr.sort(function (a, b) {
+            return a - b;
+        });
+        console.log(arr[0]);
+        console.log(arr[arr.length - 1]);
+        var min = Math.min.apply(null, arr);
+        var max = Math.max.apply(null, arr);
+        console.log(min);
+        console.log(max);
+    </script>
+</body>
+
+</html>

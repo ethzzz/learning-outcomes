@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+        }
+
+        /* 伪元素必须要有content属性 */
+        div::before {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            content: "我";
+            background-color: red;
+        }
+
+        div::after {
+            content: "你";
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div>是</div>
+</body>
+
+</html>

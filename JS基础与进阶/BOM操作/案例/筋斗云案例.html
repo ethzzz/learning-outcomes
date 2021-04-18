@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .nav {
+            position: relative;
+            height: 40px;
+            margin: 100px 400px;
+        }
+
+        .bg {
+            position: absolute;
+            display: inline-block;
+        }
+
+        .nav ul li {
+            float: left;
+            height: 40px;
+            width: 70px;
+            text-align: center;
+            line-height: 40px;
+            color: black;
+            list-style: none;
+        }
+
+        .bg {
+            position: absolute;
+            display: inline-block;
+            width: 70px;
+            height: 40px;
+            background: url(/image/touxiang.jpg) no-repeat;
+            left: 0;
+            top: 0;
+            z-index: -1;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            // 1.获取元素
+            var bg = document.querySelector('.bg');
+            var nav = document.querySelector('.nav');
+            var lis = nav.querySelectorAll('li');
+            // 2.给所有小li绑定点击事件
+            var current = 0;
+            for (let i = 0; i < lis.length; i++) {
+                lis[i].addEventListener('mouseenter', function () {
+                    animate(bg, this.offsetLeft);
+                })
+                lis[i].addEventListener('mouseleave', function () {
+                    animate(bg, current);
+                })
+                lis[i].addEventListener('click', function () {
+                    current = this.offsetLeft;
+                })
+            }
+        }
+    </script>
+    <script src="/函数封装JS/animate.js"></script>
+</head>
+
+<body>
+    <div class="nav">
+        <span class="bg"></span>
+        <ul>
+            <li class="current"><a href="javascript:;">自定义</a></li>
+            <li><a href="javascript:;">自定义</a> </li>
+            <li><a href="javascript:;">自定义</a> </li>
+            <li><a href="javascript:;">自定义</a> </li>
+            <li><a href="javascript:;">自定义</a> </li>
+            <li><a href="javascript:;">自定义</a> </li>
+        </ul>
+    </div>
+</body>
+
+</html>

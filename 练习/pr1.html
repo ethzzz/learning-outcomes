@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <span class="caret"></span>
+    <div contenteditable="true">我可以</div>
+    <p tabindex="1">我可以</p><br />
+    <a id="yes">我可以</a>
+    <b>重要通知</b>今天下午
+    <font color="red">2点到5点半</font>小区停电<br />
+    <ul>
+        <li>新功能</li>
+        <li>旧功能
+            <img src="../image/touxiang.jpg" alt="">
+        </li>
+    </ul>
+    <label for="test">
+    </label>
+    <input type="radio" id="test" name="test">;
+    <div style="border: 1px solid; width: 200px; height: 200px;"></div>
+    <script>
+        var arr = [];
+        arr[0] = 1;
+        arr[1] = 2;
+        arr[2] = 'c';
+        console.log(arr.length);
+        console.log(false == null);
+
+        function Foo() {
+            var i = 0;
+            return function () {
+                console.log(i++);
+            }
+        }
+        var f1 = Foo();
+        var f2 = Foo();
+        f1();
+        f1();
+        f2();
+        console.log(typeof (function () {
+            console.log('hello world');
+        }));
+        var a = "";
+        console.log(Boolean(a));
+        console.log(a instanceof String);
+        // let声明的量与var不同，存在块级作用于，在for循环结束后销毁，所以返回undefined
+        try {
+            for (let i = 0; i < 12; i++) {}
+            console.log(i);
+        } catch {
+            // const声明的常量无法更改 所以返回TypeError
+            try {
+                const b = 12;
+                b = 13;
+                console.log(b);
+            } catch {
+                // const声明的对象里的属性可以修改
+                const x = {
+                    a: 3
+                };
+                console.log(x.a);
+                x.a = 12;
+                console.log(x.a);
+                let [head, ...tail] = [1, 2, 3, 4];
+                console.log(tail);
+            }
+        }
+
+        var test = new Boolean();
+        console.log(test);
+        var test = new Boolean(NaN);
+        console.log(test);
+        sessionStorage.setItem();
+    </script>
+</body>
+
+</html>

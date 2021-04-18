@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<!-- 水平框架 -->
+<!-- <frameset cols="25%,50%,25%" >
+    <frame src="列表.html">
+        <frame src="列表.html">
+            <frame src="列表.html">
+</frameset> -->
+<!-- 垂直框架 -->
+<!-- <frameset rows="25%,50%,25%">
+    <frame src="列表.html">
+        <frame src="列表.html">
+            <frame src="列表.html">
+</frameset> -->
+<!-- 混合框架 -->
+<frameset rows="50%,50%">
+    <!-- noresize属性设置不可变化尺寸 -->
+    <frame src="列表.html" noresize="noresize" />
+    <frameset cols="30%,70%">
+        <frame src="列表.html" noresize="noresize">
+            <frame src="列表.html">
+    </frameset>
+</frameset>
+<!-- 注意 frameset禁止和body 一起使用 -->
+<noframes>
+
+    <body>
+        您的浏览器无法处理框架
+    </body>
+</noframes>
+
+
+</html>

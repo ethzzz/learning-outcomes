@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            display: flex;
+            width: 200px;
+            height: 200px;
+            text-indent: 2em;
+            background-color: red;
+            /* vertical-align: middle; */
+            color: rgb(0, 170, 0);
+            text-transform: uppercase;
+            transition-timing-function: cubic-bezier(.22, 1.23, .97, .89);
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <marquee behavior="" scrolldelay="200" direction="right">Welcome</marquee>
+    <div class="father">
+        <!-- father -->
+        <div class="son">son</div>
+    </div>
+    <h1>xxxx <small>sssss</small></h1>
+    <script>
+        var father = document.querySelector('.father');
+        console.log(father.children)
+    </script>
+
+    <script>
+        /* var m = 1,
+            j = k = 0;
+
+        function add(n) {
+            return n = n + 1;
+        }
+        y = add(m);
+        console.log(y);
+
+        function add(n) {
+            return n = n + 3;
+        }
+        z = add(m);
+        console.log(z); */
+
+        /* function Foo() {
+            let a = Foo.prototype;
+            let b = Object.getPrototypeOf(new Foo());
+            let c = Object.getPrototypeOf(Foo);
+            console.log(a === b);
+            console.log(a === c);
+        }
+        Foo(); */
+        console.log(null === undefined);
+
+        /* var name = 'Jay';
+
+        function Person(name) {
+            this.name = name;
+            console.log(4, this.name);
+        }
+
+        var a = Person('Tom');
+        console.log(1, name);
+        console.log(2, a);
+        var b = new Person('Michael');
+        console.log(3, b); */
+    </script>
+</body>
+
+</html>

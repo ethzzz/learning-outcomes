@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            position: relative;
+            float: left;
+            width: 100px;
+            height: 200px;
+            border: 1px solid red;
+            margin-left: -1px;
+        }
+
+        div:hover {
+            /* 如果div 都有定位  则用z-index 提高层级 */
+            z-index: 1;
+            border-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+
+</html>

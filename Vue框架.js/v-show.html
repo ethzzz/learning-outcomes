@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- v-show
+        根据元素真假切换显示状态
+        指令后面的元素都会解析为布尔值 
+        本质切换display属性 -->
+        <button @click="change">更换显示方式</button><br>
+        <img src="../image/demo-1.png" v-show="show" alt="" srcset="">
+        <button @click="addAge">更换显示方式</button><br>
+        <img src="../image/demo-1.png" v-show="age>=18" alt="" srcset="">
+        <script>
+            var app = new Vue({
+                el: "#app",
+                data: {
+                    show: "true",
+                    age: 14
+                },
+                methods: {
+                    change: function () {
+                        this.show = !this.show;
+                    },
+                    addAge: function () {
+                        this.age++;
+                    }
+                }
+            })
+        </script>
+    </div>
+</body>
+
+</html>

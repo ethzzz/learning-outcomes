@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        /*
+		1、normal:默认值。定义标准的字符。
+		2、bold:定义粗体字符。
+		3、bolder:定义更粗的字符。
+		4、lighter:定义更细的字符。
+		5、数字:|100|200|300|400|500|600|700|800|900定义由粗到细的字符。400 等同于 normal，而 700 等同于 bold。
+		6、inherit:规定从父元素继承字体的粗细。
+		*/
+        /* #time {
+            font-weight: bold;
+            color: red;
+            border: 1.5px soLid #3A3ADD;
+            width: 200px;
+            margin: 5px auto;
+            text-align: center;
+        } */
+        .box {
+            position: relative;
+            width: 400px;
+            margin: 100px auto;
+            border: 1px solid black;
+        }
+
+        .box #btn1 {
+            position: absolute;
+            height: 20px;
+            right: 2px;
+            top: 1px;
+            margin: auto;
+        }
+
+        .box #psw {
+            width: 300px;
+            outline: none;
+            border: none;
+
+        }
+
+        #txt {
+            color: #999;
+        }
+
+        .div1 {
+            height: 200px;
+            width: 100px;
+            background-color: beige;
+        }
+
+        .change {
+            margin-top: 50px;
+            background-color: blueviolet;
+            height: 100px;
+            width: 200px;
+        }
+
+
+        .p1 {
+            display: inline-block;
+            color: blue;
+            font-size: 12px;
+        }
+
+        .wrong {
+            color: red;
+        }
+    </style>
+    <script>
+        // var a;
+        // var b = null;
+        // console.log(a == b);
+        // console.log('1' == false);
+        // console.log(typeof a);
+        // console.log(typeof b);
+        // console.log(a === b);
+        // var btn = document.getElementById('btn1');
+        // var psw = document.getElementById('psw');
+        // btn.onclick = function () {
+        //     psw.type = 'text';
+        // }
+    </script>
+</head>
+
+<body>
+    <!-- <div id="time"></div>
+    <input type="button" value="stop" οnclick="stop();" /> -->
+    <!-- <script type="text/javascript">
+        var add = setInterval("getTime()", 1000);
+        //stop()这个函数主要是清除设置的定时器
+        function stop() {
+            clearInterval(add);
+        }
+        //这个函数主要是获取时间然后写入div中
+        function getTime() {
+            var date = new Date().toLocaleString(); //创建date对象，获取时间
+            switch (new Date().getDay()) {
+                case 1:
+                    date = "星期一" + "<br>" + date;
+                    break;
+                case 2:
+                    date = "星期二" + "<br>" + date;
+                    break;
+                case 3:
+                    date = "星期三" + "<br>" + date;
+                    break;
+                case 4:
+                    date = "星期四" + "<br>" + date;
+                    break;
+                case 5:
+                    date = "星期五" + "<br>" + date;
+                    break;
+                case 6:
+                    date = "星期六" + "<br>" + date;
+                    break;
+                case 7:
+                    date = "星期日" + "<br>" + date;
+                    break;
+            }
+            var id1 = document.getElementById("time"); //通过div标签的id多去div标签
+            id1.innerHTML = date; //将时间通过innerHTML属性写入div标签中
+        }
+    </script> -->
+
+    <!-- <div class="div1">上午好</div>
+    <script>
+        var div = document.querySelector('.div1');
+        var date = new Date();
+        var h = date.getHours();
+        console.log(h);
+        switch (h) {
+            case 1:
+                div.innerHTML = '上午好';
+                break;
+            case 11:
+                div.innerHTML = '上午好';
+                break;
+            case 12:
+                div.innerHTML = '中午好';
+                break;
+            case 13:
+                div.innerHTML = '中午好';
+                break;
+            case 14:
+                div.innerHTML = '下午好';
+                break;
+            default:
+                break;
+        }
+    </script> -->
+
+    <!-- <div class="box">
+        <input type="password" name="" id="psw">
+        <input type="button" value="点击切换" id="btn1">
+    </div> -->
+
+    <div>
+        <input type="text" name="" id="txt" value="手机">
+    </div>
+    <div class="div1">
+    </div>
+    <div>
+        <input type="text" name="" id="txt2" value="">
+        <p class="p1">请输入6-18位密码</p>
+    </div>
+
+    <script>
+        var txt = document.querySelector('input');
+        console.log(txt);
+        txt.onfocus = function () {
+            if (this.value == '手机') {
+                txt.value = " ";
+                txt.style.color = "#333"
+            }
+        }
+        txt.onblur = function () {
+            if (this.value == '') {
+                this.value = "手机";
+                this.style.color = "#999";
+            }
+        }
+
+        var div = document.querySelector('.div1')
+        div.onclick = function () {
+            this.className = 'change';
+        }
+
+
+        var text2 = document.querySelector('#txt2');
+
+        var p1 = document.querySelector('.p1');
+
+        text2.onblur = function () {
+            if (text2.value.length < 6 || text2.value.length > 18) {
+                p1.className = 'p1 wrong';
+            } else {
+                p1.className = "p1";
+            }
+        }
+    </script>
+</body>
+
+</html>

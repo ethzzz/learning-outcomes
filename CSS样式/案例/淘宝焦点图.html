@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .tb-promo {
+            position: relative;
+            width: 520px;
+            height: 280px;
+            margin: 100px auto;
+        }
+
+        .prev,
+        .next {
+            position: absolute;
+            text-decoration: none;
+            top: 50%;
+            margin-top: -20px;
+            width: 20px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            color: white;
+            background-color: gray;
+        }
+
+        .prev {
+            left: 0;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        .next {
+            right: 0;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+
+        .promo-nav {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            margin-left: -35px;
+            width: 70px;
+            height: 15px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 7.5px;
+        }
+
+        .promo-nav li {
+            float: left;
+            width: 8px;
+            height: 8px;
+            margin: 2.9px;
+            background-color: #ffffff;
+            border-radius: 50%;
+        }
+
+        .promo-nav .select {
+            background-color: orangered;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tb-promo">
+        <!-- 轮换图 -->
+        <img src="../../Vue框架.js/images/001.png" alt="" width="100%">
+        <!-- 左箭头 -->
+        <a href="javascript:void(0)" class="prev">&lt;</a>
+        <!-- 右箭头 -->
+        <a href="javascript:void(0)" class="next">&gt;</a>
+        <ul class="promo-nav">
+            <li class="select"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+</body>
+
+</html>

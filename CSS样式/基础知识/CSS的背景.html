@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* 默认背景颜色为透明色transparent，也可以手动设置为透明色 */
+            background-color: violet;
+            /* 默认高度为0 */
+            height: 400px;
+            width: 200px;
+            /* 背景图片的引入 */
+            /* 默认平铺 background-repaet:repeat; */
+            background-image: url(../image/touxiang.jpg);
+            /* 设置为不平铺 */
+            background-repeat: no-repeat;
+            /* 设置为x轴平铺或者y轴平铺 */
+            /* background-repeat: repeat-x; */
+            /* background-repeat: repeat-y; */
+
+            /* 背景图片位置 */
+            /* background-position: center; */
+            /* 方位名词顺序不影响 */
+            /* background-position: top center;
+            background-position: center top; */
+            /* 省略一个方位词则默认居中对齐 */
+            /* background-position: left;
+            background-position: top; */
+            /* 精确坐标  第一个必须是x坐标  第二个必须是y坐标*/
+            /* background-position: 10px 50px; */
+            /* 混合坐标  第一个为X坐标  第二个为y坐标 */
+            background-position: 20px center;
+        }
+
+        body {
+            /* 背景图片的固定 */
+            /* background-attachment:scoll;背景图片滚动 */
+            background-attachment: scroll;
+            /* background-attachment: fixed;背景图片固定 */
+            /* background-attachment: fixed; */
+
+            /* 背景图片复合性写法 */
+            /* background: */
+            /* 没有规定特定顺序 一般性顺序 */
+            background: white url(../../image/touxiang.jpg) no-repeat fixed top;
+        }
+
+        #div1 {
+            width: 300px;
+            height: 300px;
+            /* 颜色半透明  background:rgba(0,0,0,0.5)*/
+            /* 最后一个参数是alpha透明度  介于0~1之间 */
+            /* 只改变背景颜色半透明 不影响内容颜色 */
+            background: rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <div id="div1">我是div1</div>
+</body>
+
+</html>

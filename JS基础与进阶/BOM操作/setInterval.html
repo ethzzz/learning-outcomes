@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="demo">COUNT</div>
+    <button class="start">开始定时器</button>
+    <button class="stop">停止定时器</button>
+    <script>
+        // setInterval
+        // 语法规范： window.setInterval(调用函数，延时时间);
+        // 重复调用此函数
+        var demo = document.querySelector('.demo')
+        var counts = 0;
+        var st = null;
+        var start = document.querySelector('.start');
+        var stop = document.querySelector('.stop');
+
+        function count() {
+            counts = counts + 1;
+            demo.innerHTML = counts;
+        }
+        start.addEventListener('click', function () {
+            st = setInterval(() => {
+                count();
+            }, 1000);
+        })
+        stop.addEventListener('click', function () {
+            clearInterval(st);
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>未设置对齐方式的图像：</h2>
+
+    <p>图像 <img src="../image/touxiang.jpg" alt="兔"> 在文本中</p>
+
+    <h2>已设置对齐方式的图像：</h2>
+
+    <p>图像 <img src="../image/touxiang.jpg" alt="兔" align="bottom"> 在文本中</p>
+
+    <p>图像 <img src="../image/touxiang.jpg" alt="兔" align="middle"> 在文本中</p>
+
+    <p>图像 <img src="../image/touxiang.jpg" alt="兔" align="top"> 在文本中</p>
+
+    <p>请注意，bottom 对齐方式是默认的对齐方式。</p>
+
+    <p>
+        <img src="../image/touxiang.jpg" align="left">
+        带有图像的一个段落。图像的 align 属性设置为 "left"。图像将浮动到文本的左侧。
+    </p>
+
+    <p>
+        <img src="../image/touxiang.jpg" align="right">
+        带有图像的一个段落。图像的 align 属性设置为 "right"。图像将浮动到文本的右侧。
+    </p>
+
+    <img src="../image/touxiang.jpg" width="50" height="50" alt="">
+    <br />
+    <img src="../image/touxiang.jpg" width="100" height="100" alt="">
+    <br />
+    <img src="../image/touxiang.jpg" width="200" height="200" alt="">
+    <br />
+    <p>通过改变 img 标签的 "height" 和 "width" 属性的值，您可以放大或缩小图像。</p>
+    <img src="../image/touxiang123.jpg" alt="头像">
+    <p>alt中值为图像不能正常显示时提示读者失去内容得信息</p>
+
+    <p>请点击图像上的星球，把它们放大。</p>
+
+    <img src="../image/eg_planets.jpg" border="0" usemap="#planetmap" alt="Planets" />
+
+    <map name="planetmap" id="planetmap">
+
+        <area shape="circle" coords="180,139,14" href="/example/html/venus.html" target="_blank" alt="Venus" />
+
+        <area shape="circle" coords="129,161,10" href="/example/html/mercur.html" target="_blank" alt="Mercury" />
+
+        <area shape="rect" coords="0,0,110,260" href="/example/html/sun.html" target="_blank" alt="Sun" />
+
+    </map>
+
+    <p><b>注释：</b>img 元素中的 "usemap" 属性引用 map 元素中的 "id" 或 "name" 属性（根据浏览器），所以我们同时向 map 元素添加了 "id" 和 "name" 属性。</p>
+</body>
+
+</html>

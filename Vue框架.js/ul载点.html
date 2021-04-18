@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <style>
+        .div2 {
+            width: 100px;
+            height: 300px;
+            background-color: chartreuse;
+            border: 1px solid black;
+        }
+
+        .divcl {
+            width: 200px;
+            height: 400px;
+            background-color: brown;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id='div1'>
+        {{message}}
+        <div id='div2' v-on:click="doit" :class='divclass'>
+        </div>
+    </div>
+    <script>
+        var div = new Vue({
+            el: '#div2',
+            data: {
+                divclass: "divcl",
+                message: 'code'
+            },
+            methods: {
+                doit: function () {
+                    if (this.divclass = "divcl") {
+                        this.divclass = "div2";
+                        console.log(this.divclass);
+                    } else {
+                        this.divclass = "divcl";
+                        console.log(this.divclass)
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

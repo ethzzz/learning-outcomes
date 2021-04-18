@@ -1,0 +1,74 @@
+/* 把所有标签的内外边距初始化为0 */
+* {
+    margin: 0;
+    padding: 0
+}
+
+/* 斜体字体初始化为不倾斜 */
+em,
+i {
+    font-style: normal
+}
+
+/* 列表样式初始化为无 */
+li {
+    list-style: none
+}
+
+/* 图片边距初始化为0，垂直对齐方式为居中 清除图片底部空白缝隙的问题 */
+img {
+    border: 0;
+    vertical-align: middle
+}
+
+/* 初始化光标移动到按钮上为小手 */
+button {
+    cursor: pointer
+}
+
+/* 初始化超链接字体的颜色为#666，下划线为无 */
+a {
+    color: #666;
+    text-decoration: none
+}
+
+/* 初始化移动到超链接上字体颜色为#c81623 */
+a:hover {
+    color: #c81623
+}
+
+/* 初始化按钮，表单输入框的字体样式 */
+button,
+input {
+    font-family: Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+    /* 默认有黑色边框，去掉黑色边框 */
+    border: 0;
+    outline: none;
+}
+
+/* 初始化主体的背景颜色，字体颜色和样式 */
+body {
+    /* 取消文字抗锯齿 */
+    -webkit-font-smoothing: antialiased;
+    background-color: #fff;
+    font: 12px/1.5 Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+    color: #666
+}
+
+.hide,
+.none {
+    display: none
+}
+
+/* 清除浮动 */
+.clearfix:after {
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: ".";
+    height: 0
+}
+
+.clearfix {
+    *zoom: 1
+}

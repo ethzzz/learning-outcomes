@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .demo {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            /* boder-radius:length; 设置四个角的弧度 */
+            border-radius: 20px;
+        }
+
+        .circle {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            /* 让一个正方形盒子变为圆形 border-radius:50%; */
+            border-radius: 50%;
+        }
+
+        .juxing {
+            width: 400px;
+            height: 200px;
+            background-color: blue;
+            /* 设置矩形长度的一半 */
+            border-radius: 100px;
+        }
+
+        .diy {
+            width: 400px;
+            height: 200px;
+            background-color: brown;
+            /* 设置四个角  左上 右上 右下 左下*/
+            border-radius: 10px 20px 30px 40px;
+            /* 分开写 */
+            border-top-left-radius: 10px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 30px;
+            border-bottom-left-radius: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="demo"></div>
+    <div class="circle"></div>
+    <div class="juxing"></div>
+    <div class="diy"></div>
+</body>
+
+</html>

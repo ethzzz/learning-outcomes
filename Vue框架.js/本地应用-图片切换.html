@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="vue.js"></script>
+    <style>
+        #app {
+            position: relative;
+            margin: 100px auto;
+            width: 400px;
+            height: 400px;
+        }
+
+        a {
+            position: absolute;
+            height: 30px;
+            width: 20px;
+            text-decoration: none;
+            color: white;
+            background-color: gray;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        #app .a1 {
+            left: 0;
+            top: 100px;
+        }
+
+        #app .a2 {
+            right: 0;
+            top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <img :src="imgArr[index]" alt="" width="100%">
+        <a href="javascript:void(0)" class='a1' v-show="index>0" @click='pre'>&lt;</a>
+        <a href="javascript:void(0)" class='a2' v-show="index<imgArr.length-1" @click='next'>&gt;</a>
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: {
+                imgArr: [
+                    "images/001.png",
+                    "images/002.png",
+                    "images/003.png",
+                    "images/004.png",
+                    "images/005.png",
+                    "images/006.png",
+                    "images/007.png"
+                ],
+                index: 0,
+            },
+            methods: {
+                pre: function () {
+                    if (this.index > 0) {
+                        this.index--;
+                    }
+                },
+                next: function () {
+                    if (this.index < 6) {
+                        this.index++;
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

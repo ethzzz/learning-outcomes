@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 800px;
+            height: 1400px;
+            background-color: pink;
+            margin: 0 auto;
+        }
+
+        .fixed {
+            position: fixed;
+            /* 1.走到浏览器宽度的一半 */
+            left: 50%;
+            bottom: 30px;
+            /* 2.利用版心宽度的一半定位到左贴版心 */
+            margin-left: 410px;
+            width: 50px;
+            height: 150px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">版心</div>
+    <div class="fixed">定位元素</div>
+</body>
+
+</html>

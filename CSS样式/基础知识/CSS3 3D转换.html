@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: inline-block;
+            width: 100px;
+            height: 75px;
+            line-height: 75px;
+            background-color: red;
+            border: 1px solid;
+            border-radius: 5px;
+            text-align: center;
+            vertical-align: middle;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">2D转换
+    </div>
+    <div id="div2">3D转换</div>
+    <script>
+        var n = 0,
+            ny = 0,
+            rotINT, rotYINT;
+        var div1 = document.querySelector("#div1");
+        div1.onclick = function () {
+            clearInterval(rotINT);
+            rotINT = setInterval("startRotate()", 10);
+        }
+
+        function startRotate() {
+            n = n + 1;
+            div1.style.transfrom = "rotate(" + n + "deg)";
+            div1.style.webkitTransform = "rotate(" + n + "deg)";
+            div1.style.OTransform = "rotate(" + n + "deg)";
+            div1.style.MozTransform = "rotate(" + n + "deg)";
+            if (n == 180 || n == 360) {
+                clearInterval(rotINT);
+                if (n == 360) {
+                    n = 0;
+                }
+            }
+        }
+        var div2 = document.querySelector('#div2');
+        div2.onclick = function () {
+            clearInterval(rotYINT);
+            rotYINT = setInterval("startRotateY()", 10);
+        }
+
+        function startRotateY() {
+            ny = ny + 1;
+            div2.style.transfrom = "rotateY(" + ny + "deg)";
+            div2.style.webkitTransform = "rotateY(" + ny + "deg)";
+            div2.style.OTransform = "rotateY(" + ny + "deg)";
+            div2.style.MozTransform = "rotateY(" + ny + "deg)";
+            if (ny == 180 || ny >= 360) {
+                clearInterval(rotYINT);
+                if (ny >= 360) {
+                    ny = 0;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

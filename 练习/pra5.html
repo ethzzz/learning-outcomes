@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style type="text/css">
+        #msg {
+            margin: 50px;
+            font-size: 30px;
+        }
+
+        .butonstyle {
+            margin: 0px 0px 0px 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <body>
+        <div id="msg">
+            count
+        </div>
+
+        <div id="" class="butonstyle">
+
+            <button type="button" id="btnStart" onclick="start()">开始计时</button>
+            <button type="button" id="btnStop" onclick="stop()">结束计时</button>
+        </div>
+    </body>
+
+    <script type="text/javascript">
+        var count = 0;
+        var timer = null;
+        //点击开始，计时定时刷新+n，按钮名称 暂停计时
+        function start() {
+            count++;
+            var msg = document.getElementById('msg');
+            msg.innerText = count;
+
+            timer = setTimeout('start()', 500) //加引号和括号
+
+
+            // var start1 = document.getElementById('btnStart');
+            // start1.innerText = "暂停计时";
+        }
+        //点击结束，清除计时器，总值=0，按钮名称 开始计时
+        function stop() {
+            count = 0;
+            var msg = document.getElementById('msg');
+            msg.innerText = count;
+
+            clearInterval(timer);
+            var stop = document.getElementById('btnStop');
+            stop.innerText = "开始计时";
+
+
+        }
+    </script>
+</body>
+
+</html>
