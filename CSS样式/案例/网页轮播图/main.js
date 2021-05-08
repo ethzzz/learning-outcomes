@@ -63,7 +63,7 @@ window.addEventListener('load', function () {
     next.addEventListener('click', function () {
         if (flag) {
             flag = false;
-            // 如果走到了最后负值的一张图片 此时我们的ul left值快速复原为0;
+            // 如果走到了最后赋值的一张图片 此时我们的ul left值快速复原为0;
             if (num == ul.children.length - 1) {
                 ul.style.left = 0;
                 num = 0;

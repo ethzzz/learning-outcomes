@@ -78,7 +78,6 @@ console.log(stringReverse("hello")); */
 console.log(findLongestWordLength("The quick brown fox jumped over the lazy dog")); */
 
 
-
 /* var summation = function (num) {
     // Code here
     let sum = 1;
@@ -113,7 +112,6 @@ console.log(summation(8)); */
 // console.log(disemvowel('This website is for losers LOL!'))
 
 
-
 /* function digital_root(n) {
     if (n == 0) {
         return 0;
@@ -126,7 +124,6 @@ console.log(summation(8)); */
 console.log(digital_root(123123123)); */
 
 
-
 // 整数翻转
 /* function reverseInt(x) {
     let a = 2147483648;
@@ -137,11 +134,40 @@ console.log(digital_root(123123123)); */
 
 console.log(reverseInt(-2147483648)); */
 
-function demo(s1, s2) {
+/*function demo(s1, s2) {
     str1 = s1.split(',');
     str2 = s2.split(',');
     console.log(str1)
     console.log(str2)
 }
 
-demo('64:2,128:1,32:4,1:128', '50,36,64,128,127')
+demo('64:2,128:1,32:4,1:128', '50,36,64,128,127')*/
+
+/*const num = new Number()
+const str = new String()
+const arr = new Array()
+const bool = new Boolean()
+const fun = new Function()
+const obj = new Object()
+
+console.log(Object.prototype.toString.call(num))
+console.log(Object.prototype.toString.call(str))
+console.log(Object.prototype.toString.call(null))
+console.log(Object.prototype.toString.call(undefined))
+console.log(Object.prototype.toString.call(bool))
+console.log(Object.prototype.toString.call(arr))
+console.log(Object.prototype.toString.call(fun))
+console.log(Object.prototype.toString.call(obj))*/
+
+
+let arr = [1, 2, 3, 4, 5]
+
+arr.forEach(item => {
+    return item + 1
+})
+
+console.log(arr)
+
+
+let str = 'asdasd'
+str.slice(1, 3)
