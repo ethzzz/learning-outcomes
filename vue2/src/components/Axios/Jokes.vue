@@ -6,10 +6,8 @@
     </el-header>
     <el-main>
       <ul>
-        <li v-for="item in data" :key="item.sid">
-          <span>
-            <img :src="item.header" alt="" />
-          </span>
+        <li class="box">
+
         </li>
       </ul>
     </el-main>
@@ -18,6 +16,7 @@
 
 <script>
 import breadCrumb from "../breadCrumb";
+import getAction from '../../request/request'
 
 export default {
   data() {
@@ -37,8 +36,8 @@ export default {
   },
   methods: {
     async getJokesData() {
-      const { data: res } = await this.$http.get(
-        "https://api.apiopen.top/getJoke"
+      const {data: res} = await getAction(
+          "https://api.apiopen.top/getJoke"
       );
       console.log(res.result);
       this.data = res.result;
@@ -58,7 +57,5 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.el-main ul li {
-  list-style-type: none;
-}
+
 </style>

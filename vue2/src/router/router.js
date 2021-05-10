@@ -6,16 +6,17 @@ Vue.use(VueRouter)
 
 // 创建一个路由规则
 const routes = [{
-        path: '/',
-        redirect: '/home'
-    },
+    path: '/',
+    redirect: '/home'
+},
     {
         path: '/home',
         component: () => import('../views/Home'),
+        redirect: '/welcome',
         children: [{
-                path: '/welcome',
-                component: () => import('../components/welcome')
-            },
+            path: '/welcome',
+            component: () => import('../components/welcome')
+        },
             {
                 path: '/axios/jokes',
                 component: () => import('../components/axios/jokes')
@@ -36,6 +37,10 @@ const routes = [{
                 path: '/axios/music',
                 component: () => import('../components/axios/music')
             },
+            {
+                path: '/echarts/echarts',
+                component: () => import('../components/echarts/echarts')
+            }
         ]
     }
 ]
@@ -49,7 +54,6 @@ const Router = new VueRouter({
     if (to === '/home') next()
 
 }) */
-
 
 
 // 向外暴露路由实例

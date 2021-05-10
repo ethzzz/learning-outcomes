@@ -6,8 +6,10 @@ import 'nprogress/nprogress.css'
 
 // 创建一个 axios 实例
 const service = axios.create({
+    baseURL: '',
     timeout: 2000
 })
+
 
 Vue.prototype.$http = service // 将axios挂载到 Vue 原型上的$http属性上
 

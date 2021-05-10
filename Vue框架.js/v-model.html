@@ -8,31 +8,36 @@
 </head>
 
 <body>
-    <!-- v-model 指令的作用是便捷的设置和获取表单元素的值
-         绑定的数据会和表单元素值相关联 
-         绑定的数据←→表单元素的值 -->
-    <div id="app">
-        <Button @click="change">修改message的值</Button>
-        <input type="text" v-model="message" name="" id="" @keyup.enter="alert">
-        <h2>{{ message }}</h2>
-    </div>
-    <script src="vue.js"></script>
-    <script>
-        var app = new Vue({
-            el: "#app",
-            data: {
-                message: "黑马程序员"
+<!-- v-model 指令的作用是便捷的设置和获取表单元素的值
+     绑定的数据会和表单元素值相关联
+     绑定的数据←→表单元素的值 -->
+<div id="app">
+    <Button @click="change">修改message的值</Button>
+    <input type="text" v-model="message" name="" id="" @keyup.enter="alert">
+    <h2>{{ message }}</h2>
+</div>
+<script src="vue.js"></script>
+<script>
+    var app = new Vue({
+        el: "#app",
+        data: {
+            message: "黑马程序员"
+        },
+        created() {
+            // console.log(Object.prototype.toString.call(this.message))
+            this.message = prompt('请输入')
+
+        },
+        methods: {
+            alert: function () {
+                alert(this.message);
             },
-            methods: {
-                alert: function () {
-                    alert(this.message);
-                },
-                change: function () {
-                    this.message = "大前端";
-                }
+            change: function () {
+                this.message = "大前端";
             }
-        })
-    </script>
+        }
+    })
+</script>
 </body>
 
 </html>

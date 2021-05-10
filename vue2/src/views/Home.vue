@@ -3,7 +3,7 @@
     <!-- 头部区域 -->
     <el-header>
       <div @click="toWelcome">
-        <img src="../assets/logo.png" alt width="30px" height="30px" />
+        <img src="../assets/logo.png" alt width="30px" height="30px"/>
         <span>ethz test</span>
       </div>
       <el-button type="info" @click="logout">退出</el-button>
@@ -15,21 +15,21 @@
         <div class="toggle-button" @click="toggleCollapse">|||</div>
         <!-- 侧边栏菜单区域按钮 -->
         <el-menu
-          background-color="#333744"
-          text-color="#fff"
-          active-text-color="#409eff"
-          width="200px"
-          unique-opened
-          :collapse="isCollapse"
-          :collapse-transition="false"
-          :router="true"
-          :default-active="activePath"
+            background-color="#333744"
+            text-color="#fff"
+            active-text-color="#409eff"
+            width="200px"
+            unique-opened
+            :collapse="isCollapse"
+            :collapse-transition="false"
+            :router="true"
+            :default-active="activePath"
         >
           <!-- 一级菜单 -->
           <el-submenu
-            :index="item.id + ''"
-            v-for="item in menulist"
-            :key="item.id"
+              :index="item.id + ''"
+              v-for="item in menulist"
+              :key="item.id"
           >
             <!-- 一级菜单的模板区域 -->
             <template slot="title">
@@ -40,10 +40,10 @@
             </template>
             <!-- 二级菜单 -->
             <el-menu-item
-              :index="'/Axios/' + subItem.path"
-              v-for="subItem in item.children"
-              :key="subItem.id"
-              @click="savaNavStatu('/Axios/' + subItem.path)"
+                :index="item.path+ subItem.path"
+                v-for="subItem in item.children"
+                :key="subItem.id"
+                @click="savaNavStatu(item.path+ subItem.path)"
             >
               <!-- 图标 -->
               <i class="el-icon-menu"></i>
@@ -71,40 +71,52 @@ export default {
         {
           menuName: "Axios",
           id: "100",
-          path: "Axios",
+          path: "/axios",
           children: [
             {
               menuName: "Jokes",
               id: "101",
-              path: "Jokes",
+              path: "/jokes",
               children: [],
             },
             {
               menuName: "Weather",
               id: "102",
-              path: "Weather",
+              path: "/weather",
               children: [],
             },
             {
               menuName: "News",
               id: "103",
-              path: "News",
+              path: "/news",
               children: [],
             },
             {
               menuName: "Novel",
               id: "104",
-              path: "Novel",
+              path: "/novel",
               children: [],
             },
             {
               menuName: "Music",
               id: "105",
-              path: "Music",
+              path: "/music",
               children: [],
             },
           ],
         },
+        {
+          menuName: "Echarts",
+          id: "200",
+          path: "/echarts",
+          children: [
+            {
+              menuName: 'Echarts',
+              id: '106',
+              path: '/echarts'
+            }
+          ]
+        }
       ],
       // 导航栏图标
       iconObj: {
@@ -136,7 +148,7 @@ export default {
     },
     // 获取所有的菜单
     async getMenuList() {
-      const { data: res } = await this.$http.get("menus");
+      const {data: res} = await this.$http.get("menus");
       console.log(res);
       if (res.meta.status !== 200) return this.$message.error(res.meta.msg);
       this.menulist = res.data;
