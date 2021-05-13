@@ -1,8 +1,9 @@
 module.exports = {
     root: true,
-    parser: 'babel-eslint-vue',//解析器，这里我们使用babel-eslint
+    parser: 'vue-eslint-parser',//解析器，这里我们使用babel-eslint
     parserOptions: {
-        sourceType: 'module'//类型为module，因为代码使用了ECMAScript模块
+        sourceType: 'module',//类型为module，因为代码使用了ECMAScript模块
+        parser: 'babel-eslint'
     },
     env: {
         browser: true,//预定义的全局变量，这里是浏览器环境

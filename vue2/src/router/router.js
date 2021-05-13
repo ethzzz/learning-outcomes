@@ -46,6 +46,7 @@ const routes = [{
 ]
 
 const Router = new VueRouter({
+    mode: 'history',
     routes // 挂载路由规则
 })
 

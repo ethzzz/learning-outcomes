@@ -6,7 +6,7 @@
         <img src="../assets/logo.png" alt width="30px" height="30px"/>
         <span>ethz test</span>
       </div>
-      <el-button type="info" @click="logout">退出</el-button>
+      <el-button id="logout" type="info" @click="logout">退出</el-button>
     </el-header>
     <el-container>
       <!-- 侧边栏 -->
@@ -15,11 +15,10 @@
         <div class="toggle-button" @click="toggleCollapse">|||</div>
         <!-- 侧边栏菜单区域按钮 -->
         <el-menu
-            background-color="#333744"
+            background-color="#373d41"
             text-color="#fff"
             active-text-color="#409eff"
             width="200px"
-            unique-opened
             :collapse="isCollapse"
             :collapse-transition="false"
             :router="true"
@@ -125,7 +124,7 @@ export default {
         101: "el-icon-s-goods",
         102: "el-icon-s-order",
         145: "el-icon-s-marketing",
-        200: "el-icon-headset",
+        200: "el-icon-s-data",
       },
       // 是否折叠
       isCollapse: false,
@@ -173,7 +172,7 @@ export default {
 
 .el-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding-left: 0;
   align-items: center;
   color: #fff;
@@ -187,6 +186,11 @@ export default {
     span {
       margin-left: 15px;
     }
+  }
+
+  #logout {
+    position: absolute;
+    right: 10px;
   }
 }
 

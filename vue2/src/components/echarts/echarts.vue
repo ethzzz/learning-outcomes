@@ -2,6 +2,14 @@
   <div>
     <!--头部导航栏区域 -->
     <bread-crumb :head-data="headData"></bread-crumb>
+
+    <!--卡片视图区域-->
+    <el-card>
+      <el-dropdown>
+
+      </el-dropdown>
+    </el-card>
+
   </div>
 </template>
 
@@ -23,6 +31,13 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="less" scoped>
+.el-dropdown-link {
+  cursor: pointer;
+  color: #409EFF;
+}
 
+.el-icon-arrow-down {
+  font-size: 12px;
+}
 </style>

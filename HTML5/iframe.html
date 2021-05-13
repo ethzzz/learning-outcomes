@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="change()" style="display: block;width: 100px;height: 100px">改变</button>
+<iframe id="if" src="canvas画布.html" frameborder="0" width="1000" height="1000px"></iframe>
+<script>
+    function change() {
+        let iframe = document.querySelector('#if')
+        iframe.src = '新增Input类型.html'
+    }
+</script>
+</body>
+</html>
