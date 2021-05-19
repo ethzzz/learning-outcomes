@@ -5,18 +5,20 @@ import VueRouter from "vue-router";
 Vue.use(VueRouter)
 
 // 创建一个路由规则
-const routes = [{
-    path: '/',
-    redirect: '/home'
-},
+const routes = [
+    {
+        path: '/',
+        redirect: '/home'
+    },
     {
         path: '/home',
         component: () => import('../views/Home'),
         redirect: '/welcome',
-        children: [{
-            path: '/welcome',
-            component: () => import('../components/welcome')
-        },
+        children: [
+            {
+                path: '/welcome',
+                component: () => import('../components/welcome')
+            },
             {
                 path: '/axios/jokes',
                 component: () => import('../components/axios/jokes')
