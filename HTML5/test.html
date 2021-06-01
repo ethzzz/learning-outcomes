@@ -11,14 +11,152 @@
             height: 100%;
         }
 
-        div {
-            height: 100%;
+        #main{
+            width: 640px;
+            margin: auto;
+        }
+
+        .body{
             width: 100%;
-            background-color: #00a4ff;
+            height: 400px;
+            overflow-y: scroll;
+        }
+
+        .head table .body table{
+            width: 100%;
+        }
+
+        td{
+            text-align: center;
+        }
+
+        td,
+        th {
+            border: 1px solid #333;
+            height: 50px;
+            width: 120px;
         }
     </style>
 </head>
 <body>
-<div></div>
+<div id="main">
+    <div class="head">
+        <table cellspacing="0">
+            <!--<colgroup>
+                <col style="width: 80px;" />
+                <col />
+            </colgroup>-->
+            <thead id="thead">
+            <tr id="thr">
+                <th>
+                    <input type="checkbox" name="selectAll" id="selectAll" value="">
+                </th>
+            </tr>
+            </thead>
+        </table>
+    </div>
+
+    <div class="body">
+        <table cellspacing="0">
+            <!--<colgroup>
+                <col style="width: 80px;" />
+                <col />
+            </colgroup>-->
+
+            <tbody id="tbody">
+
+            </tbody>
+        </table>
+    </div>
+
+
+    <script>
+        function generate() {
+            let data = [['Index', `Data1`, `Data2`, `Data3`]]
+
+            for (let i = 0; i < 15; i++) {
+                data.push([
+                    i + 1,
+                    parseInt(Date.now() + Math.random() * 10000000).toString(16),
+                    parseInt(Date.now() + Math.random() * 10000000).toString(16),
+                    parseInt(Date.now() + Math.random() * 10000000).toString(16)
+                ])
+            }
+
+            return data
+        }
+
+        const data = generate() // 获取生成的随机数据
+        let thead = document.querySelector('#thead') // 获取表头
+        let thr = document.querySelector('#thr') // 获取表头行
+        let tbody = document.querySelector('#tbody') // 获取表体
+        for (let i = 0; i < data[0].length; i++) {
+            let th = document.createElement('th')
+            thr.appendChild(th)
+            th.innerHTML = data[0][i]
+        }
+
+        for (let i = 1; i < data.length - 1; i++) {
+            let tr = document.createElement('tr')
+            tbody.appendChild(tr)
+            let td = document.createElement('td')
+            tr.appendChild(td)
+            let cb = document.createElement('input')
+            cb.type = 'checkbox'
+            cb.name = 'childSelect'
+            td.appendChild(cb)
+            for (let j = 0; j < data[i].length; j++) {
+                let td = document.createElement('td')
+                tr.appendChild(td)
+                td.innerHTML = data[i][j]
+            }
+        }
+        let sAll = document.querySelector('#selectAll')
+        let cAll = document.querySelectorAll('input[name="childSelect"]')
+        // console.log(cAll)
+
+        window.addEventListener('load', () => {
+            let count = 0;
+            sAll.addEventListener('click', () => {
+                console.log(sAll.checked)
+                if (sAll.checked) {
+                    cAll.forEach(item => {
+                        item.checked = true
+                        count = data.length-2
+                    })
+                } else {
+                    cAll.forEach(item => {
+                        item.checked = false
+                        count = 0
+                    })
+                }
+            })
+
+
+            cAll.forEach(item => {
+                item.addEventListener('click', () => {
+                    if(item.checked){
+                        count++
+                    }else{
+                        count--
+                    }
+
+                    if (count==0) {
+                        sAll.indeterminate = false
+                        sAll.checked = false
+                    } else if(count<data.length-2){
+                        sAll.indeterminate = true
+                        sAll.checked = false
+                    }else{
+                        sAll.indeterminate = false
+                        sAll.checked = true
+                    }
+                })
+            })
+        })
+
+
+    </script>
+</div>
 </body>
 </html>
