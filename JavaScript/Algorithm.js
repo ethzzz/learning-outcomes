@@ -11,12 +11,12 @@
 } */
 
 //  斐波那契数列 1 1 2 3 5 8 13 21 ……  使用优化
-function al2(n, ac1 = 1, ac2 = 1) {
+/*function al2(n, ac1 = 1, ac2 = 1) {
     if (n <= 2) return ac2
     return al2(--n, ac2, ac1 + ac2)
 }
 
-console.log(al2(1000))
+console.log(al2(1000))*/
 
 
 /* // ...展开符 接受不确定数量的参数
@@ -172,3 +172,71 @@ console.log(add2(([9, 9, 9, 9]))) */
 }
 
 console.log(cssStyle2DomStyle('-java-script')) */
+
+
+// 手动实现 字符串 trims 方法
+/*
+const trims = str => {
+    let start,end;
+    for (let i = 0; i < str.length; i++) {
+        if (str.charAt(i) !== '') {
+            start = i
+        }
+    }
+    for (let j = str.length; j >= 0; j--) {
+        if (str.charAt(j) !== ' ') {
+            end = j+1
+        }
+    }
+    return str.substring(start,end)
+}
+
+console.log(trims("   dasdasd    "))*/
+
+// TODO: complete this object/class
+
+// The constructor takes in an array of items and a integer indicating how many
+// items fit within a single page
+function PaginationHelper(collection, itemsPerPage){
+    this.arr = collection || []
+    this.pageNum = itemsPerPage || 0
+}
+
+// returns the number of items within the entire collection
+PaginationHelper.prototype.itemCount = function() {
+    return this.arr.length
+}
+
+// returns the number of pages
+PaginationHelper.prototype.pageCount = function() {
+    return this.pageNum===0?0:Math.floor(this.arr.length/this.pageNum+1)
+}
+
+// returns the number of items on the current page. page_index is zero based.
+// this method should return -1 for pageIndex values that are out of range
+PaginationHelper.prototype.pageItemCount = function(pageIndex) {
+    if(pageIndex<this.pageCount()-1){
+        return this.pageNum
+    }else if(pageIndex === this.pageCount()-1){
+        return this.itemCount()-(this.pageCount()-1)*this.pageNum
+    }else{
+        return -1
+    }
+}
+
+// determines what page an item is on. Zero based indexes
+// this method should return -1 for itemIndex values that are out of range
+PaginationHelper.prototype.pageIndex = function(itemIndex) {
+    if(this.arr.length===0||itemIndex>this.itemCount()||itemIndex<0){
+        return -1
+    }else{
+        return Math.floor(itemIndex/this.pageNum)
+    }
+}
+
+const helper = new PaginationHelper([], 4)
+
+console.log(helper.itemCount())
+console.log(helper.pageCount())
+console.log(helper.pageItemCount(1))
+console.log(helper.pageIndex(0))
