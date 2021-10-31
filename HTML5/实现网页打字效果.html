@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div>
+    <span id="text"></span>
+</div>
+<script>
+    let textArray = ["江靖城，是一名p3级Java开发工程师，目前工作在顶呱呱集团下薯片科技有限公司，是未来要成为CTO的男人！",
+        "江靖城，是一名非常热爱Java开发的男人，在薯片科技力压群雄，从一众大专人上人中脱颖而出，成为一颗不可磨灭的新星，承技术总监赏识，被项目经理赞美，已然成为不可替代的一员！！！"]
+    let s = document.querySelector("#text")
+    const delay = 100;
+    let num = 0;
+    let i = 0;
+    const startScoll = () => {
+        s.innerText = textArray[i].slice(0, num++) + " | " // 每次打印比上次多一个字
+        if (num > textArray[i].length) {
+            setTimeout(endScoll, 500)
+        } else {
+            setTimeout(startScoll, delay)
+        }
+    }
+    const endScoll = () => {
+        s.innerText = textArray[i].slice(0, --num) + " | "
+        if (num === 0) {
+            i < textArray.length - 1 ? i++ : i = 0
+            setTimeout(startScoll, 500)
+        } else {
+            setTimeout(endScoll, delay)
+        }
+    }
+    startScoll()
+</script>
+</body>
+</html>

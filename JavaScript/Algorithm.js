@@ -193,7 +193,7 @@ const trims = str => {
 
 console.log(trims("   dasdasd    "))*/
 
-// TODO: complete this object/class
+/*// TODO: complete this object/class
 
 // The constructor takes in an array of items and a integer indicating how many
 // items fit within a single page
@@ -239,4 +239,27 @@ const helper = new PaginationHelper([], 4)
 console.log(helper.itemCount())
 console.log(helper.pageCount())
 console.log(helper.pageItemCount(1))
-console.log(helper.pageIndex(0))
+console.log(helper.pageIndex(0))*/
+
+
+/*// 输出一个等比数列第k位数的个位数
+// 三个参数分别为 等比数列的第一个数，公比，k
+const getLastNum = (firstNum = 1, q, k) => {
+    return firstNum * q ** (k - 1).toString()
+}
+
+console.log(getLastNum(2, 2, 11))*/
+
+
+var a = 2;
+
+function use() {
+    console.log(a)
+}
+
+function test() {
+    var a = 1;
+    use()
+}
+
+test()
