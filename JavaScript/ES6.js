@@ -41,7 +41,7 @@ console.log(c)*/
  * @author: ethz
  * @Description: 闭包
  */
-function fn(f) {
+/* function fn(f) {
   let run
   return function (x) {
     if (!run) {
@@ -66,6 +66,36 @@ const add = function (){
   this.a
 }
 
-add()
+add() */
 
+/**
+ * @author ethz
+ * @description Proxy Reflect
+ * @date 2024/2/20
+ */
+/* const parent = {
+  name: '19Qingfeng',
+  get value() {
+    return this.name;
+  },
+};
 
+const handler = {
+  get(target, key, receiver) {
+    // return Reflect.get(target, key);
+    return Reflect.get(target, key, receiver);
+    // 这里相当于 return target[key]
+  },
+};
+
+const proxy = new Proxy(parent, handler);
+
+const obj = {
+  name: 'wang.haoyu',
+};
+
+// 设置obj继承与parent的代理对象proxy
+Object.setPrototypeOf(obj, proxy);
+
+// log: false
+console.log(obj.value); */

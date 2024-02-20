@@ -20,7 +20,7 @@
             if (typeof (Worker) !== "undefined") {
                 if (typeof (w) == "undefined") {
                     console.log("Yes! Web worker support");
-                    w = new Worker("demo_workers.js");
+                    w = new Worker("./demo_workers.js");
                 }
                 w.onmessage = function (event) {
                     document.querySelector('#result').innerHTML = event.data;
