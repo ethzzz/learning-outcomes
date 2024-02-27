@@ -17,31 +17,31 @@ const routes = [
         children: [
             {
                 path: '/welcome',
-                component: () => import('../components/welcome')
+                component: () => import('../components/welcome.vue')
             },
             {
                 path: '/axios/jokes',
-                component: () => import('../components/axios/jokes')
+                component: () => import('../components/Axios/Jokes.vue')
             },
             {
                 path: '/axios/weather',
-                component: () => import('../components/axios/weather')
+                component: () => import('../components/Axios/Weather.vue')
             },
             {
                 path: '/axios/news',
-                component: () => import('../components/axios/news')
+                component: () => import('../components/Axios/News.vue')
             },
             {
                 path: '/axios/novel',
-                component: () => import('../components/axios/novel')
+                component: () => import('../components/Axios/Novel.vue')
             },
             {
                 path: '/axios/music',
-                component: () => import('../components/axios/music')
+                component: () => import('../components/Axios/Music.vue')
             },
             {
                 path: '/echarts/echarts',
-                component: () => import('../components/echarts/echarts')
+                component: () => import('../components/echarts/echarts.vue')
             }
         ]
     }
