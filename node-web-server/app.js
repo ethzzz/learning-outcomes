@@ -1,5 +1,7 @@
 const express = require('express')
 const port = 3000
+const allRouter = require(__dirname + '/routes/index')
+console.log("allRouter", allRouter);
 const { waterfall } = require('async')
 
 function init_app() {
@@ -8,6 +10,10 @@ function init_app() {
     waterfall([
         cb => {
             const redis = require('./utils/redis')
+            cb()
+        },
+        cb => {
+            server.use("/", allRouter)
             cb()
         }
     ], function (err) {
