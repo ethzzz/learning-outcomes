@@ -1,7 +1,7 @@
 const axios = require('axios')
 const fs = require("fs")
 const allRouter = function () {
-    const files = fs.readdirSync(__dirname + "\\modules")
+    const files = fs.readdirSync(__dirname + '/modules')
     const routerModules = []
     for (let i = 0; i < files.length; i++) {
         const file = files[i]

@@ -13,7 +13,7 @@ function init_app() {
             cb()
         },
         cb => {
-            server.use("/", allRouter)
+            // server.use("/", allRouter)
             cb()
         }
     ], function (err) {

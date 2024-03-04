@@ -54,6 +54,17 @@ console.log(a);
 bbb()
 console.log(a); */
 
-(function () {
+/* (function () {
     console.log(this)
-})()
+})() */
+
+const obj = {
+    a: 1,
+    b: {
+        c: 2
+    }
+}
+
+for (let v of obj) {
+    console.log(obj)
+}
